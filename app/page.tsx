@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Search, CheckCircle, ArrowRight } from "lucide-react";
+import { CheckCircle, ArrowRight } from "lucide-react";
 import PropertyCard from "@/components/PropertyCard";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import { mockListings, blogPosts } from "@/lib/mockData";
@@ -31,100 +31,105 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center bg-[#0d0d0d] pt-[72px]">
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-black/30 pointer-events-none" />
-        <div className="relative z-10 text-center px-6 max-w-[900px] mx-auto mb-12">
-          <h1 className="font-serif text-4xl md:text-6xl lg:text-7xl font-light text-white leading-tight mb-6">
+      {/* ─── HERO ─────────────────────────────────────────────── */}
+      <section className="relative min-h-screen flex flex-col items-center justify-center bg-[#0d0d0d] pt-[72px] pb-16">
+        <div className="relative z-10 text-center px-6 max-w-[960px] mx-auto mb-10">
+          {/* Main headline — bold serif, matching original */}
+          <h1
+            className="font-serif text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6"
+            style={{ fontWeight: 700 }}
+          >
             Discover Your Dream Home with Steve Lew Real Estate Group
           </h1>
-          <p className="text-gray-300 text-lg md:text-xl leading-relaxed max-w-[700px] mx-auto">
+          <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-[750px] mx-auto">
             Explore exceptional homes for sale in central Indiana with our expert realtors,
             dedicated to finding the perfect property for you.
           </p>
         </div>
-        {/* Search Widget */}
-        <div className="relative z-10 w-full max-w-[900px] px-4">
+
+        {/* Search widget — matches original layout */}
+        <div className="relative z-10 w-full max-w-[960px] px-6">
           <HomeSearch />
         </div>
       </section>
 
-      {/* Making a Difference */}
+      {/* ─── MAKING A DIFFERENCE ─────────────────────────────── */}
       <section className="bg-[#111111] py-20 px-6">
-        <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14 items-center">
           <div>
-            <p className="text-xs tracking-[0.3em] uppercase text-gray-500 mb-3">MAKING A DIFFERENCE</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-white font-light mb-8">
+            <p className="text-[11px] tracking-[0.35em] uppercase text-white/40 mb-4 font-semibold">
+              MAKING A DIFFERENCE
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl text-white mb-10" style={{ fontWeight: 600 }}>
               Award-Winning Real Estate Excellence
             </h2>
-            <ul className="space-y-3">
+            <ul className="space-y-4">
               {awards.map((award) => (
-                <li key={award} className="flex items-start gap-3 text-gray-300 text-sm">
-                  <CheckCircle size={14} className="text-white/40 mt-0.5 flex-shrink-0" />
+                <li key={award} className="flex items-start gap-3 text-white/70 text-sm leading-relaxed">
+                  <CheckCircle size={14} className="text-white/30 mt-0.5 flex-shrink-0" />
                   {award}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="relative h-80 md:h-[420px]">
+          <div className="relative h-[400px] md:h-[500px]">
             <Image
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=700&h=500&fit=crop&auto=format"
-              alt="Steve Lew Real Estate Group"
+              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&auto=format"
+              alt="Steve Lew Real Estate Group award recognition"
               fill
               className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-black/20" />
+            <div className="absolute inset-0 bg-black/10" />
           </div>
         </div>
       </section>
 
-      {/* How Can We Assist You? */}
+      {/* ─── SERVING CENTRAL INDIANA ──────────────────────────── */}
       <section className="bg-[#0d0d0d] py-20 px-6">
-        <div className="max-w-[1200px] mx-auto text-center">
-          <p className="text-xs tracking-[0.3em] uppercase text-gray-500 mb-3">CENTRAL INDIANA</p>
-          <h2 className="font-serif text-3xl md:text-5xl text-white font-light mb-4">
-            How can we assist you?
-          </h2>
-          <p className="text-gray-400 max-w-[600px] mx-auto mb-12">
-            We cater to the real estate needs of all of Central Indiana, offering comprehensive services
-            for buyers, sellers, and builders alike.
-          </p>
-          <div className="grid md:grid-cols-2 gap-6 max-w-[700px] mx-auto">
-            <Link
-              href="/listing"
-              className="group border border-white/20 px-8 py-6 text-center hover:bg-white/5 transition-all"
-            >
-              <p className="font-serif text-2xl text-white mb-2">Buy</p>
-              <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
-                Search 10,000+ listings in central Indiana
-              </p>
-            </Link>
-            <Link
-              href="/sell"
-              className="group border border-white/20 px-8 py-6 text-center hover:bg-white/5 transition-all"
-            >
-              <p className="font-serif text-2xl text-white mb-2">Sell</p>
-              <p className="text-sm text-gray-400 group-hover:text-gray-300 transition-colors">
-                List your home with a full-service brokerage
-              </p>
-            </Link>
+        <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14 items-center">
+          <div className="relative h-80 md:h-[440px]">
+            <Image
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&h=500&fit=crop&auto=format"
+              alt="Steve Lew — Managing Broker"
+              fill
+              className="object-cover object-top"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
+          </div>
+          <div>
+            <p className="text-[11px] tracking-[0.35em] uppercase text-white/40 mb-4 font-semibold">
+              CENTRAL INDIANA
+            </p>
+            <p className="text-white/70 text-base leading-relaxed mb-8">
+              We cater to the real estate needs of all of Central Indiana, offering comprehensive
+              services for buyers, sellers, and builders. Our experienced team is committed to
+              delivering exceptional results for every client.
+            </p>
+            <h2 className="font-serif text-4xl md:text-5xl text-white" style={{ fontWeight: 600 }}>
+              How can we assist you?
+            </h2>
           </div>
         </div>
       </section>
 
-      {/* Featured Listings */}
+      {/* ─── FEATURED LISTINGS ────────────────────────────────── */}
       <section className="bg-[#f8f7f4] py-20 px-6">
         <div className="max-w-[1200px] mx-auto">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-2">MIBOR MLS</p>
-              <h2 className="font-serif text-3xl md:text-4xl text-gray-900">FEATURED LISTINGS</h2>
+              <h2
+                className="font-serif text-3xl md:text-4xl text-gray-900"
+                style={{ fontWeight: 700 }}
+              >
+                FEATURED LISTINGS
+              </h2>
             </div>
             <Link
               href="/listing"
-              className="flex items-center gap-2 text-xs tracking-widest uppercase text-gray-600 hover:text-gray-900 transition-colors"
+              className="flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-gray-500 hover:text-gray-900 transition-colors font-semibold"
             >
-              MORE LISTINGS <ArrowRight size={14} />
+              MORE LISTINGS <ArrowRight size={13} />
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -132,47 +137,74 @@ export default function HomePage() {
               <PropertyCard key={listing.id} listing={listing} />
             ))}
           </div>
-          <div className="text-center mt-10">
+          <div className="text-center mt-12">
             <Link
               href="/listing"
-              className="inline-block border border-gray-900 px-10 py-3 text-xs tracking-widest uppercase text-gray-900 hover:bg-gray-900 hover:text-white transition-all"
+              className="inline-block border border-gray-800 px-12 py-3.5 text-[11px] tracking-[0.2em] uppercase text-gray-800 hover:bg-gray-900 hover:text-white transition-all font-semibold"
             >
-              VIEW ALL LISTINGS
+              MORE LISTINGS
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Full Service Brokerage */}
+      {/* ─── FULL SERVICE BROKERAGE ───────────────────────────── */}
       <section className="bg-[#111111] py-20 px-6">
-        <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative h-72 md:h-[420px]">
-            <Image
-              src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&h=500&fit=crop&auto=format"
-              alt="Steve Lew Moving Truck"
-              fill
-              className="object-cover"
-            />
+        <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14 items-center">
+          <div className="grid grid-cols-2 gap-2 h-[420px]">
+            <div className="relative row-span-2">
+              <Image
+                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=600&fit=crop&auto=format"
+                alt="Steve Lew moving truck"
+                fill
+                className="object-cover"
+                sizes="25vw"
+              />
+            </div>
+            <div className="relative">
+              <Image
+                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=280&fit=crop&auto=format"
+                alt="Beautiful home"
+                fill
+                className="object-cover"
+                sizes="25vw"
+              />
+            </div>
+            <div className="relative">
+              <Image
+                src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=280&fit=crop&auto=format"
+                alt="Luxury home"
+                fill
+                className="object-cover"
+                sizes="25vw"
+              />
+            </div>
           </div>
           <div>
-            <h2 className="font-serif text-3xl md:text-4xl text-white font-light mb-6">
+            <h2
+              className="font-serif text-3xl md:text-4xl text-white mb-6"
+              style={{ fontWeight: 600 }}
+            >
               Full Service Brokerage With Fair Rates
             </h2>
-            <p className="text-gray-400 mb-8">
+            <p className="text-white/60 mb-6 text-sm leading-relaxed">
               Our top priority is you! Our team of agents are always ready to assist you in achieving
-              your real estate goals. What We Offer:
+              your real estate goals.
+            </p>
+            <p className="text-[11px] tracking-[0.2em] uppercase text-white/40 mb-4 font-semibold">
+              What We Offer:
             </p>
             <ul className="space-y-3 mb-8">
               {whatWeOffer.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-gray-200 text-sm">
-                  <span className="w-1.5 h-1.5 bg-white/50 rounded-full flex-shrink-0" />
+                <li key={item} className="flex items-center gap-3 text-white/80 text-sm">
+                  <span className="w-1.5 h-1.5 bg-white/40 rounded-full flex-shrink-0" />
                   {item}
                 </li>
               ))}
             </ul>
             <Link
               href="/sell"
-              className="inline-block border border-white px-10 py-3 text-xs tracking-widest uppercase text-white hover:bg-white hover:text-black transition-all"
+              className="inline-block border border-white px-10 py-3.5 text-[11px] tracking-[0.2em] uppercase text-white hover:bg-white hover:text-black transition-all font-semibold"
             >
               SELL MY HOME
             </Link>
@@ -180,38 +212,47 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* ─── TESTIMONIALS ─────────────────────────────────────── */}
       <TestimonialsCarousel />
 
-      {/* Blog */}
+      {/* ─── BLOG ─────────────────────────────────────────────── */}
       <section className="bg-[#0d0d0d] py-20 px-6">
         <div className="max-w-[1200px] mx-auto">
-          <div className="flex items-end justify-between mb-10">
-            <h2 className="font-serif text-3xl md:text-4xl text-white font-light">SLREG BLOG</h2>
+          <div className="flex items-end justify-between mb-12">
+            <h2
+              className="font-serif text-3xl md:text-4xl text-white"
+              style={{ fontWeight: 600 }}
+            >
+              SLREG BLOG
+            </h2>
             <Link
               href="/blog"
-              className="flex items-center gap-2 text-xs tracking-widest uppercase text-gray-400 hover:text-white transition-colors"
+              className="flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-white/40 hover:text-white transition-colors font-semibold"
             >
-              MORE ARTICLES <ArrowRight size={14} />
+              MORE BLOG ARTICLES <ArrowRight size={13} />
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {blogPosts.map((post) => (
               <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
-                <div className="relative h-48 overflow-hidden mb-4">
+                <div className="relative h-52 overflow-hidden mb-5">
                   <Image
                     src={post.image}
                     alt={post.title}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
-                <p className="text-[11px] text-gray-500 mb-2">{post.date}</p>
-                <h3 className="font-serif text-lg text-white mb-2 group-hover:text-gray-300 transition-colors">
+                <p className="text-[11px] text-white/40 mb-2 tracking-wider">{post.date}</p>
+                <h3
+                  className="font-serif text-xl text-white mb-3 group-hover:text-white/80 transition-colors"
+                  style={{ fontWeight: 600 }}
+                >
                   {post.title}
                 </h3>
-                <p className="text-xs text-gray-400 leading-relaxed line-clamp-3">{post.excerpt}</p>
-                <p className="text-xs tracking-widest uppercase text-white/50 mt-3 group-hover:text-white/80 transition-colors">
+                <p className="text-xs text-white/50 leading-relaxed line-clamp-3">{post.excerpt}</p>
+                <p className="text-[11px] tracking-[0.2em] uppercase text-white/30 mt-4 group-hover:text-white/60 transition-colors font-semibold">
                   MORE
                 </p>
               </Link>

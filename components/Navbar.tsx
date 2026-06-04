@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const navLinks = [
@@ -39,6 +40,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -46,102 +48,114 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-black/95 shadow-lg backdrop-blur-sm" : "bg-black/80"
+        scrolled ? "bg-[#0d0d0d] shadow-lg" : "bg-[#0d0d0d]"
       }`}
     >
-      <nav className="max-w-[1400px] mx-auto px-4 lg:px-8 flex items-center justify-between h-[72px]">
+      <nav className="max-w-[1500px] mx-auto px-4 xl:px-8 flex items-center h-[72px]">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 flex-shrink-0">
+        <Link href="/" className="flex items-center gap-2 flex-shrink-0 mr-8">
           <SLLogo />
         </Link>
 
-        {/* Desktop Nav */}
-        <ul className="hidden lg:flex items-center gap-1">
+        {/* Desktop Nav — matches original: show all links */}
+        <ul className="hidden lg:flex items-center flex-1">
           {navLinks.map((link) => (
-            <li key={link.label} className="relative group">
+            <li key={link.label} className="relative">
               {link.children ? (
-                <>
+                <div
+                  onMouseEnter={() => setOpenDropdown(link.label)}
+                  onMouseLeave={() => setOpenDropdown(null)}
+                >
                   <button
-                    className="flex items-center gap-1 px-3 py-2 text-white text-xs font-medium tracking-widest uppercase hover:text-gray-300 transition-colors"
-                    onMouseEnter={() => setOpenDropdown(link.label)}
-                    onMouseLeave={() => setOpenDropdown(null)}
+                    className={`flex items-center gap-1 px-3 py-5 text-white text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors relative ${
+                      isActive(link.href) ? "text-white" : "hover:text-white/70"
+                    }`}
                   >
                     {link.label}
-                    <ChevronDown size={12} />
+                    <ChevronDown size={11} className="mt-0.5" />
+                    {isActive(link.href) && (
+                      <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-white" />
+                    )}
                   </button>
                   {openDropdown === link.label && (
-                    <div
-                      className="absolute top-full left-0 bg-black border border-white/10 min-w-[200px] py-2 shadow-xl"
-                      onMouseEnter={() => setOpenDropdown(link.label)}
-                      onMouseLeave={() => setOpenDropdown(null)}
-                    >
+                    <div className="absolute top-full left-0 bg-[#0d0d0d] border-t border-white/10 min-w-[200px] py-2 shadow-2xl z-50">
                       {link.children.map((child) => (
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block px-4 py-2 text-xs text-gray-300 hover:text-white hover:bg-white/5 tracking-wide uppercase transition-colors"
+                          className="block px-5 py-2.5 text-[11px] text-white/70 hover:text-white hover:bg-white/5 tracking-[0.12em] uppercase transition-colors"
                         >
                           {child.label}
                         </Link>
                       ))}
                     </div>
                   )}
-                </>
+                </div>
               ) : (
                 <Link
                   href={link.href}
-                  className="block px-3 py-2 text-white text-xs font-medium tracking-widest uppercase hover:text-gray-300 transition-colors"
+                  className={`block px-3 py-5 text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors relative ${
+                    isActive(link.href) ? "text-white" : "text-white hover:text-white/70"
+                  }`}
                 >
                   {link.label}
+                  {isActive(link.href) && (
+                    <span className="absolute bottom-0 left-2 right-2 h-[2px] bg-white" />
+                  )}
                 </Link>
               )}
             </li>
           ))}
         </ul>
 
-        {/* Auth + Hamburger */}
-        <div className="flex items-center gap-3">
-          <div className="hidden lg:flex items-center gap-2">
-            <button className="text-white text-xs tracking-widest uppercase px-3 py-1.5 hover:text-gray-300 transition-colors">
+        {/* Right: Register + Sign In + Hamburger (always visible) */}
+        <div className="flex items-center gap-1 ml-auto">
+          <div className="hidden lg:flex items-center">
+            <button className="text-white text-[11px] tracking-[0.15em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold">
               REGISTER
             </button>
-            <button className="text-white text-xs tracking-widest uppercase px-3 py-1.5 hover:text-gray-300 transition-colors">
+            <button className="text-white text-[11px] tracking-[0.15em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold">
               SIGN IN
             </button>
           </div>
           <button
-            className="text-white p-2 hover:text-gray-300 transition-colors"
+            className="text-white p-2 hover:text-white/70 transition-colors ml-2"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu */}
+      {/* Mobile/Overflow Menu */}
       {mobileOpen && (
-        <div className="lg:hidden bg-black/98 border-t border-white/10">
-          <ul className="px-4 py-4 flex flex-col gap-1">
+        <div className="bg-[#0d0d0d] border-t border-white/10">
+          <ul className="px-6 py-4 flex flex-col">
             {navLinks.map((link) => (
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  className="block py-3 text-white text-sm tracking-widest uppercase border-b border-white/5 hover:text-gray-300 transition-colors"
+                  className={`block py-3 text-[11px] tracking-[0.2em] uppercase border-b border-white/5 transition-colors font-semibold ${
+                    isActive(link.href) ? "text-white" : "text-white/70 hover:text-white"
+                  }`}
                   onClick={() => setMobileOpen(false)}
                 >
                   {link.label}
                 </Link>
               </li>
             ))}
-            <li className="pt-4 flex gap-4">
-              <button className="text-white text-xs tracking-widest uppercase">
+            <li className="pt-4 flex gap-6">
+              <button className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white">
                 REGISTER
               </button>
-              <button className="text-white text-xs tracking-widest uppercase">
+              <button className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white">
                 SIGN IN
               </button>
             </li>
@@ -154,30 +168,31 @@ export default function Navbar() {
 
 function SLLogo() {
   return (
-    <div className="flex items-center gap-2">
-      <div className="relative w-[52px] h-[52px]">
+    <div className="flex items-center gap-2.5">
+      {/* Circular SL badge — matches original exactly */}
+      <div className="w-[56px] h-[56px] flex-shrink-0">
         <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-          <circle cx="50" cy="50" r="48" fill="none" stroke="white" strokeWidth="1.5" />
+          <circle cx="50" cy="50" r="47" fill="none" stroke="white" strokeWidth="1.5" />
           <text
             x="50"
-            y="56"
+            y="58"
             textAnchor="middle"
-            fontSize="36"
+            fontSize="38"
             fontFamily="Cormorant Garamond, Georgia, serif"
-            fontWeight="300"
+            fontWeight="400"
             fill="white"
-            letterSpacing="2"
           >
             SL
           </text>
         </svg>
       </div>
-      <div className="flex flex-col leading-tight">
-        <span className="text-white text-sm font-medium tracking-[0.2em] uppercase">
-          Steve Lew
+      <div className="flex flex-col leading-none gap-0.5">
+        <span className="text-white text-[13px] font-semibold tracking-[0.18em] uppercase">
+          STEVE LEW
         </span>
-        <span className="text-white/60 text-[9px] tracking-[0.3em] uppercase">
-          Real Estate Group
+        <div className="w-full h-px bg-white/30" />
+        <span className="text-white/60 text-[8px] tracking-[0.35em] uppercase">
+          REAL ESTATE GROUP
         </span>
       </div>
     </div>
