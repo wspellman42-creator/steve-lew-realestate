@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Mail, MapPin } from "lucide-react";
 
 const siteMap = [
@@ -54,9 +55,9 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div>
-            {/* Logo */}
-            <div className="flex items-center gap-2 mb-4">
-              <SLLogoSmall />
+            {/* Real logo */}
+            <div className="flex items-center gap-3 mb-4">
+              <Image src="/images/logo.png" alt="Steve Lew Real Estate Group" width={52} height={52} className="object-contain" />
               <div>
                 <p className="text-sm font-medium tracking-wider">Steve Lew Real Estate Group</p>
                 <p className="text-[10px] text-gray-400 tracking-widest">License ID: RC51800217</p>
@@ -113,12 +114,12 @@ export default function Footer() {
                 </a>
               ))}
             </div>
-            {/* Industry Logos */}
-            <div className="flex flex-wrap gap-3 items-center">
-              <MiborBadge label="REALTOR®" />
-              <MiborBadge label="MLS" />
-              <MiborBadge label="Equal Housing" />
-              <MiborBadge label="MIBOR" />
+            {/* Real industry badge images from listwithlew.com */}
+            <div className="flex flex-wrap gap-4 items-center">
+              <Image src="/images/logo.png" alt="Steve Lew Real Estate Group" width={50} height={50} className="object-contain" />
+              <Image src="/images/badge-realtor-mls.png" alt="REALTOR® MLS" width={60} height={40} className="object-contain" />
+              <Image src="/images/badge-equal-housing.png" alt="Equal Housing Opportunity" width={40} height={40} className="object-contain" />
+              <Image src="/images/badge-mibor.png" alt="MIBOR" width={60} height={40} className="object-contain" />
             </div>
           </div>
         </div>

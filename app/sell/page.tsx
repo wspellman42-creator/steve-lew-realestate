@@ -27,8 +27,8 @@ export default function SellPage() {
         {/* Image Side */}
         <div className="relative min-h-[50vh] md:min-h-0">
           <Image
-            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&h=700&fit=crop&auto=format"
-            alt="Steve Lew Moving Truck"
+            src="/images/truck.webp"
+            alt="Steve Lew Real Estate Group Moving Truck"
             fill
             className="object-cover"
             priority

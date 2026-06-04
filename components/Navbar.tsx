@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -13,14 +14,14 @@ const navLinks = [
     children: [
       { label: "Search All Listings", href: "/listing" },
       { label: "Featured Listings", href: "/listing?status=featured" },
-      { label: "New Construction", href: "/listing?type=new" },
+      { label: "Sold Listings", href: "/listing?status=sold" },
     ],
   },
   {
     label: "SELL",
     href: "/sell",
     children: [
-      { label: "Sell Your Home", href: "/sell" },
+      { label: "Sell My Home", href: "/sell" },
       { label: "Home Valuation", href: "/home-valuation" },
     ],
   },
@@ -28,8 +29,9 @@ const navLinks = [
     label: "MEET THE TEAM",
     href: "/about",
     children: [
-      { label: "Our Team", href: "/about" },
-      { label: "Lew Crew Gives Back", href: "/about#gives-back" },
+      { label: "About Us", href: "/about" },
+      { label: "Contact Us", href: "/about#contact" },
+      { label: "Reviews", href: "/about#reviews" },
     ],
   },
   { label: "MARKET SNAPSHOT", href: "/snapshot" },
@@ -58,12 +60,19 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-[1500px] mx-auto px-4 xl:px-8 flex items-center h-[72px]">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 flex-shrink-0 mr-8">
-          <SLLogo />
+        {/* Real logo from listwithlew.com */}
+        <Link href="/" className="flex items-center flex-shrink-0 mr-8">
+          <Image
+            src="/images/logo.png"
+            alt="Steve Lew Real Estate Group"
+            width={140}
+            height={105}
+            className="h-[58px] w-auto object-contain"
+            priority
+          />
         </Link>
 
-        {/* Desktop Nav — matches original: show all links */}
+        {/* Desktop Nav */}
         <ul className="hidden lg:flex items-center flex-1">
           {navLinks.map((link) => (
             <li key={link.label} className="relative">
@@ -73,8 +82,8 @@ export default function Navbar() {
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <button
-                    className={`flex items-center gap-1 px-3 py-5 text-white text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors relative ${
-                      isActive(link.href) ? "text-white" : "hover:text-white/70"
+                    className={`flex items-center gap-1 px-3 py-5 text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors relative ${
+                      isActive(link.href) ? "text-white" : "text-white hover:text-white/70"
                     }`}
                   >
                     {link.label}
@@ -114,7 +123,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right: Register + Sign In + Hamburger (always visible) */}
+        {/* Register + Sign In + Hamburger */}
         <div className="flex items-center gap-1 ml-auto">
           <div className="hidden lg:flex items-center">
             <button className="text-white text-[11px] tracking-[0.15em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold">
@@ -134,7 +143,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile/Overflow Menu */}
+      {/* Mobile Menu */}
       {mobileOpen && (
         <div className="bg-[#0d0d0d] border-t border-white/10">
           <ul className="px-6 py-4 flex flex-col">
@@ -163,38 +172,5 @@ export default function Navbar() {
         </div>
       )}
     </header>
-  );
-}
-
-function SLLogo() {
-  return (
-    <div className="flex items-center gap-2.5">
-      {/* Circular SL badge — matches original exactly */}
-      <div className="w-[56px] h-[56px] flex-shrink-0">
-        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-          <circle cx="50" cy="50" r="47" fill="none" stroke="white" strokeWidth="1.5" />
-          <text
-            x="50"
-            y="58"
-            textAnchor="middle"
-            fontSize="38"
-            fontFamily="Cormorant Garamond, Georgia, serif"
-            fontWeight="400"
-            fill="white"
-          >
-            SL
-          </text>
-        </svg>
-      </div>
-      <div className="flex flex-col leading-none gap-0.5">
-        <span className="text-white text-[13px] font-semibold tracking-[0.18em] uppercase">
-          STEVE LEW
-        </span>
-        <div className="w-full h-px bg-white/30" />
-        <span className="text-white/60 text-[8px] tracking-[0.35em] uppercase">
-          REAL ESTATE GROUP
-        </span>
-      </div>
-    </div>
   );
 }

@@ -51,12 +51,11 @@ export const mockListings: Listing[] = [
     sqft: 5292,
     status: "Coming Soon",
     listedBy: "Steve Lew Real Estate Group",
-    image:
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=600&h=400&fit=crop&auto=format",
+    image: "https://cdn.chime.me/image/fs/mls-listing/2025217/12/w800_original_f49515d6-f5ff-4261-9c23-426327ea9850-jpeg.webp",
     images: [
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=600&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&h=600&fit=crop&auto=format",
+      "https://cdn.chime.me/image/fs/mls-listing/2025217/12/w800_original_f49515d6-f5ff-4261-9c23-426327ea9850-jpeg.webp",
+      "https://cdn.chime.me/image/fs/mls-listing/2025217/12/w800_original_9269dbd5-9ff4-4c93-ac1f-0c7dd504fcd8-jpeg.webp",
+      "https://cdn.chime.me/image/fs/mls-listing/2025217/12/w800_original_eb0cfdd9-d11a-4296-a03b-73d22a2c29b8-jpeg.webp",
     ],
     description:
       "Stunning property in Indianapolis with over 5,000 square feet of living space. This coming soon listing is a rare opportunity.",
@@ -74,8 +73,7 @@ export const mockListings: Listing[] = [
     status: "Active",
     openHouse: "Open Thu 5:30PM–7PM",
     listedBy: "Isaiah Ullery of Steve Lew Real Estate Group, LLC",
-    image:
-      "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&auto=format",
     images: [
       "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&h=600&fit=crop&auto=format",
       "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=600&fit=crop&auto=format",
@@ -96,11 +94,9 @@ export const mockListings: Listing[] = [
     status: "Active",
     openHouse: "Open Sat 1PM–3PM",
     listedBy: "Steve Lew of Steve Lew Real Estate Group, LLC",
-    image:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&auto=format",
     images: [
       "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=600&fit=crop&auto=format",
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop&auto=format",
     ],
     description:
       "Spacious 4-bedroom home in Bargersville with open concept living and a gorgeous backyard.",
@@ -117,8 +113,7 @@ export const mockListings: Listing[] = [
     sqft: 1380,
     status: "Pending",
     listedBy: "Alfonso Andolz of Steve Lew Real Estate Group, LLC",
-    image:
-      "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=600&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=800&h=600&fit=crop&auto=format",
     images: [
       "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?w=800&h=600&fit=crop&auto=format",
     ],
@@ -137,8 +132,7 @@ export const mockListings: Listing[] = [
     sqft: 3362,
     status: "Pending",
     listedBy: "Steve Lew of Steve Lew Real Estate Group, LLC",
-    image:
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop&auto=format",
     images: [
       "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop&auto=format",
     ],
@@ -157,8 +151,7 @@ export const mockListings: Listing[] = [
     sqft: 2076,
     status: "Pending",
     listedBy: "April Grabbe of Steve Lew Real Estate Group, LLC",
-    image:
-      "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=600&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&h=600&fit=crop&auto=format",
     images: [
       "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=800&h=600&fit=crop&auto=format",
     ],
@@ -178,9 +171,9 @@ export const mockListings: Listing[] = [
     status: "Active",
     listedBy: "Tracy Miller of Steve Lew Real Estate Group, LLC",
     image:
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop&auto=format",
+      "https://cdn.chime.me/image/fs/mls-listing/2025217/12/w800_original_f49515d6-f5ff-4261-9c23-426327ea9850-jpeg.webp",
     images: [
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=600&fit=crop&auto=format",
+      "https://cdn.chime.me/image/fs/mls-listing/2025217/12/w800_original_f49515d6-f5ff-4261-9c23-426327ea9850-jpeg.webp",
     ],
     description:
       "Move-in ready 3-bedroom on a quiet cul-de-sac in southwest Indianapolis.",
@@ -197,8 +190,7 @@ export const mockListings: Listing[] = [
     sqft: 2890,
     status: "Active",
     listedBy: "Brian Coffey of Steve Lew Real Estate Group, LLC",
-    image:
-      "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=600&h=400&fit=crop&auto=format",
+    image: "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800&h=600&fit=crop&auto=format",
     images: [
       "https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=800&h=600&fit=crop&auto=format",
     ],
@@ -211,104 +203,87 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Steve Lew",
     title: "Managing Broker",
-    image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-steve-lew.webp",
   },
   {
     name: "Erica Lew",
     title: "Operations Manager",
-    image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-erica-lew.webp",
   },
   {
     name: "Isaiah Ullery",
     title: "Director of Sales/Broker",
-    image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-isaiah-ullery.webp",
   },
   {
     name: "April Grabbe",
     title: "Inside Sales Rep/Broker",
-    image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-april-grabbe.webp",
   },
   {
     name: "Brian Coffey",
     title: "Broker",
-    image:
-      "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-brian-coffey.webp",
   },
   {
     name: "Tracy Miller",
     title: "Broker",
-    image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-tracy-miller.webp",
   },
   {
     name: "Autumn Stivers",
     title: "Broker",
-    image:
-      "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-autumn-stivers.webp",
   },
   {
     name: "Sarah Alspach-Whitaker",
     title: "Broker",
-    image:
-      "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-sarah-alspach.webp",
   },
   {
     name: "Natalie Rosetto",
     title: "Broker",
-    image:
-      "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-natalie-rosetto.webp",
   },
   {
     name: "Kelsey Rowe",
     title: "Broker",
-    image:
-      "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-kelsey-rowe.webp",
   },
   {
     name: "Amy Mack",
     title: "Broker",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-amy-mack.webp",
   },
   {
     name: "Brandon Mitchell",
     title: "Broker",
-    image:
-      "https://images.unsplash.com/photo-1542178243-bc20204b769f?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-brandon-mitchell.webp",
   },
   {
     name: "Jasmeen Kahlon",
     title: "Broker",
-    image:
-      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-jasmeen-kahlon.webp",
   },
   {
     name: "Jason Wolf",
     title: "Broker",
-    image:
-      "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-jason-wolf.webp",
   },
   {
     name: "Alfonso Andolz",
     title: "Broker",
-    image:
-      "https://images.unsplash.com/photo-1463453091185-61582044d556?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-steve-lew.webp",
   },
   {
     name: "Brooke Moore",
     title: "Broker",
-    image:
-      "https://images.unsplash.com/photo-1524250502761-1ac6f2e30d43?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-april-grabbe.webp",
   },
   {
     name: "Will Spellman",
     title: "Broker",
-    image:
-      "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?w=400&h=400&fit=crop&auto=format",
+    image: "/images/team-brandon-mitchell.webp",
   },
 ];
 
@@ -401,31 +376,28 @@ export const testimonials: Testimonial[] = [
 
 export const blogPosts: BlogPost[] = [
   {
-    slug: "check-out-our-newest-newsletter-and-a-yummy-soup-recipe",
+    slug: "Check-out-our-newest-newsletter-and-a-yummy-soup-recipe",
     title: "Check out our newest newsletter and a yummy soup recipe",
-    date: "January 28, 2025",
+    date: "January 28, 2025 01:16 PM",
     excerpt:
       "Stay up to date with the latest from Steve Lew Real Estate Group plus a delicious soup recipe to warm up this winter season.",
-    image:
-      "https://images.unsplash.com/photo-1585399000684-d2f72660f092?w=600&h=400&fit=crop&auto=format",
+    image: "/images/blog-newsletter.webp",
   },
   {
-    slug: "we-crashed-the-party-at-johnson-county-senior-services",
+    slug: "We-crashed-the-party-at-Johnson-County-Senior-Services-",
     title: "We crashed the party at Johnson County Senior Services!",
-    date: "October 28, 2024",
+    date: "October 28, 2024 03:30 PM",
     excerpt:
       "Last week we had the opportunity to volunteer at the beautiful new Johnson County Senior Services building. What an amazing experience giving back to our community.",
-    image:
-      "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&h=400&fit=crop&auto=format",
+    image: "/images/blog-senior-services.webp",
   },
   {
-    slug: "what-has-slre-been-up-to-this-summer",
+    slug: "What-has-SLRE-been-up-to-this-summer-",
     title: "What has SLRE been up to this summer?",
-    date: "October 02, 2024",
+    date: "October 02, 2024 10:19 AM",
     excerpt:
       "Have you been wondering what we have been doing in the community in 2024, besides helping our clients buy and sell homes? Let us fill you in!",
-    image:
-      "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?w=600&h=400&fit=crop&auto=format",
+    image: "/images/about-community-1.webp",
   },
 ];
 

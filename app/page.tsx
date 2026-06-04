@@ -74,13 +74,12 @@ export default function HomePage() {
           </div>
           <div className="relative h-[400px] md:h-[500px]">
             <Image
-              src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&auto=format"
-              alt="Steve Lew Real Estate Group award recognition"
+              src="/images/steve-headshot.webp"
+              alt="Steve Lew — Managing Broker"
               fill
-              className="object-cover"
+              className="object-cover object-top"
               sizes="(max-width: 768px) 100vw, 50vw"
             />
-            <div className="absolute inset-0 bg-black/10" />
           </div>
         </div>
       </section>
@@ -90,7 +89,7 @@ export default function HomePage() {
         <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14 items-center">
           <div className="relative h-80 md:h-[440px]">
             <Image
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=700&h=500&fit=crop&auto=format"
+              src="/images/steve-headshot.webp"
               alt="Steve Lew — Managing Broker"
               fill
               className="object-cover object-top"
@@ -151,34 +150,14 @@ export default function HomePage() {
       {/* ─── FULL SERVICE BROKERAGE ───────────────────────────── */}
       <section className="bg-[#111111] py-20 px-6">
         <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14 items-center">
-          <div className="grid grid-cols-2 gap-2 h-[420px]">
-            <div className="relative row-span-2">
-              <Image
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=600&fit=crop&auto=format"
-                alt="Steve Lew moving truck"
-                fill
-                className="object-cover"
-                sizes="25vw"
-              />
-            </div>
-            <div className="relative">
-              <Image
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=280&fit=crop&auto=format"
-                alt="Beautiful home"
-                fill
-                className="object-cover"
-                sizes="25vw"
-              />
-            </div>
-            <div className="relative">
-              <Image
-                src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400&h=280&fit=crop&auto=format"
-                alt="Luxury home"
-                fill
-                className="object-cover"
-                sizes="25vw"
-              />
-            </div>
+          <div className="relative h-[420px]">
+            <Image
+              src="/images/truck.webp"
+              alt="Steve Lew Real Estate Group moving truck"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+            />
           </div>
           <div>
             <h2

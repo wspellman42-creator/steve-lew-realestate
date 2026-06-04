@@ -9,7 +9,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[400px] flex items-end">
         <Image
-          src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=1600&h=700&fit=crop&auto=format"
+          src="/images/about-team-group.webp"
           alt="Steve Lew Real Estate Team"
           fill
           className="object-cover"
@@ -70,8 +70,8 @@ export default function AboutPage() {
           </div>
           <div className="relative h-72 md:h-[400px]">
             <Image
-              src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=700&h=500&fit=crop&auto=format"
-              alt="Community Giving"
+              src="/images/about-community-2.webp"
+              alt="Lew Crew Gives Back — Community Giving"
               fill
               className="object-cover"
             />
