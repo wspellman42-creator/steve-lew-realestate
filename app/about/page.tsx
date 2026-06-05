@@ -1,15 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Star } from "lucide-react";
+import AgentGrid from "@/components/AgentGrid";
 import { testimonials } from "@/lib/mockData";
 
 const communityPhotos = [
-  { src: "/images/about-community-1.webp", alt: "Lew Crew volunteers at community mural project" },
-  { src: "/images/about-community-2.webp", alt: "Steve Lew Real Estate booth at community event" },
-  { src: "/images/about-team-group.webp", alt: "Lew Crew volunteers at animal rescue event" },
-  { src: "/images/about-community-1.webp", alt: "Lew Crew at Johnson County Senior Services" },
-  { src: "/images/about-community-2.webp", alt: "Lew Crew Greenwood Fire Department partnership" },
-  { src: "/images/about-team-group.webp", alt: "Lew Crew holiday party giving event" },
+  { src: "/images/about-community-1.webp", alt: "Lew Crew community mural project" },
+  { src: "/images/about-community-2.webp", alt: "Steve Lew Real Estate community booth" },
+  { src: "/images/about-team-group.webp", alt: "Lew Crew volunteers" },
+  { src: "/images/about-community-1.webp", alt: "Lew Crew Johnson County Senior Services" },
+  { src: "/images/about-community-2.webp", alt: "Lew Crew Greenwood Fire Department" },
+  { src: "/images/about-team-group.webp", alt: "Lew Crew holiday giving event" },
   { src: "/images/about-community-1.webp", alt: "Lew Crew Christmas community event" },
   { src: "/images/about-community-2.webp", alt: "Lew Crew builds community playground" },
 ];
@@ -17,53 +18,37 @@ const communityPhotos = [
 export default function AboutPage() {
   return (
     <div className="min-h-screen pt-[72px]">
-      {/* Hero */}
-      <section className="relative h-[60vh] min-h-[400px] flex items-end">
-        <Image src="/images/about-team-group.webp" alt="Steve Lew Real Estate Team" fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 px-6 pb-16 max-w-[1200px] mx-auto w-full">
-          <h1 className="font-serif text-4xl md:text-6xl text-white font-light mb-4">
+
+      {/* Hero — centered text matching listwithlew.com */}
+      <section className="relative h-[55vh] min-h-[360px] flex items-center justify-center">
+        <Image
+          src="/images/about-team-group.webp"
+          alt="Steve Lew Real Estate Team"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/45 pointer-events-none" />
+        <div className="relative z-10 text-center px-6">
+          <h1 className="font-serif text-3xl md:text-5xl text-white font-semibold mb-3">
             Experienced and Professional Team of Agents
           </h1>
-          <p className="text-gray-300 text-lg italic">
+          <div className="w-16 h-0.5 bg-white mx-auto mb-4" />
+          <p className="text-white text-base md:text-lg italic">
             We are here to help you with all of your real estate needs from start to finish.
           </p>
         </div>
       </section>
 
-      {/* Three Team Category Cards */}
+      {/* Agent Grid */}
       <section className="bg-white py-20 px-6">
         <div className="max-w-[1200px] mx-auto">
-          <div className="text-center mb-12">
-            <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-3">OUR PEOPLE</p>
-            <h2 className="font-serif text-3xl md:text-4xl text-gray-900">Meet the Team</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              { href: "/about/leadership", label: "Leadership", desc: "Managing brokers and team leadership", img: "/images/steve-headshot.webp" },
-              { href: "/about/agents", label: "Sales Agents", desc: "Licensed agents ready to help you buy or sell", img: "/images/about-team-group.webp" },
-              { href: "/about/staff", label: "Administrative Staff", desc: "The support team keeping everything running smoothly", img: "/images/about-community-1.webp" },
-            ].map((card) => (
-              <Link key={card.href} href={card.href} className="group relative overflow-hidden block">
-                <div className="relative h-72">
-                  <Image src={card.img} alt={card.label} fill className="object-cover group-hover:scale-105 transition-transform duration-500" />
-                  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/40 transition-colors" />
-                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
-                    <h3 className="font-serif text-2xl text-white mb-2">{card.label}</h3>
-                    <p className="text-white/70 text-sm mb-4">{card.desc}</p>
-                    <span className="border border-white text-white text-[11px] tracking-[0.2em] uppercase px-6 py-2 group-hover:bg-white group-hover:text-black transition-all">
-                      VIEW TEAM
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+          <AgentGrid />
         </div>
       </section>
 
       {/* Lew Crew Gives Back */}
-      <section id="gives-back" className="bg-white py-16 px-6">
+      <section id="gives-back" className="bg-white py-16 px-6 border-t border-gray-100">
         <div className="max-w-[1200px] mx-auto">
           <h2 className="font-serif text-3xl md:text-4xl text-gray-900 text-center mb-10">
             Lew Crew <span className="text-red-600 font-bold">Gives Back</span>

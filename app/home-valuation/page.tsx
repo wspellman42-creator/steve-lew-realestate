@@ -15,15 +15,17 @@ export default function HomeValuationPage() {
 
   return (
     <div className="min-h-screen relative flex flex-col">
-      {/* Full-bleed background */}
-      <Image
-        src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1800&h=1200&fit=crop&auto=format"
-        alt="Beautiful home"
-        fill
-        className="object-cover pointer-events-none"
-        priority
-      />
-      <div className="absolute inset-0 bg-black/60 pointer-events-none" />
+      {/* Full-bleed background — pointer-events-none on wrapper so inputs work */}
+      <div className="pointer-events-none absolute inset-0">
+        <Image
+          src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1800&h=1200&fit=crop&auto=format"
+          alt="Beautiful home"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60" />
+      </div>
 
       {/* Top bar */}
       <div className="relative z-10 flex items-center justify-between px-6 py-4 border-b border-white/10">

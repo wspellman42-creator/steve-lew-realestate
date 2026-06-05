@@ -9,7 +9,6 @@ interface Agent {
   id: string;
   name: string;
   title: string;
-  category: "leadership" | "agents" | "staff";
   phone: string;
   email: string;
   license: string;
@@ -74,7 +73,6 @@ export default function AdminPage() {
   // Agent form
   const [aName, setAName] = useState("");
   const [aTitle, setATitle] = useState("");
-  const [aCategory, setACategory] = useState<"leadership" | "agents" | "staff">("agents");
   const [aPhone, setAPhone] = useState("");
   const [aEmail, setAEmail] = useState("");
   const [aLicense, setALicense] = useState("");
@@ -133,7 +131,7 @@ export default function AdminPage() {
   // ── AGENTS ──────────────────────────────────────────────
   function loadAgentIntoForm(a: Agent) {
     setEditingAgent(a);
-    setAName(a.name); setATitle(a.title); setACategory(a.category ?? "agents"); setAPhone(a.phone);
+    setAName(a.name); setATitle(a.title); setAPhone(a.phone);
     setAEmail(a.email); setALicense(a.license); setASpecialty(a.specialty);
     setAPhoto(a.photo); setAInstagram(a.instagram); setAFacebook(a.facebook);
     setALinkedin(a.linkedin); setABio(a.bio);
@@ -142,7 +140,7 @@ export default function AdminPage() {
 
   function clearAgentForm() {
     setEditingAgent(null);
-    setAName(""); setATitle(""); setACategory("agents"); setAPhone(""); setAEmail("");
+    setAName(""); setATitle(""); setAPhone(""); setAEmail("");
     setALicense(""); setASpecialty(""); setAPhoto("");
     setAInstagram(""); setAFacebook(""); setALinkedin(""); setABio("");
     if (agentPhotoFileRef.current) agentPhotoFileRef.current.value = "";
@@ -152,9 +150,9 @@ export default function AdminPage() {
     if (!aName.trim()) { alert("Name is required."); return; }
     const updated = editingAgent
       ? agents.map(a => a.id === editingAgent.id
-          ? { ...a, name: aName, title: aTitle, category: aCategory, phone: aPhone, email: aEmail, license: aLicense, specialty: aSpecialty, photo: aPhoto, instagram: aInstagram, facebook: aFacebook, linkedin: aLinkedin, bio: aBio }
+          ? { ...a, name: aName, title: aTitle, phone: aPhone, email: aEmail, license: aLicense, specialty: aSpecialty, photo: aPhoto, instagram: aInstagram, facebook: aFacebook, linkedin: aLinkedin, bio: aBio }
           : a)
-      : [...agents, { id: Date.now().toString(), name: aName, title: aTitle, category: aCategory, phone: aPhone, email: aEmail, license: aLicense, specialty: aSpecialty, photo: aPhoto, instagram: aInstagram, facebook: aFacebook, linkedin: aLinkedin, bio: aBio }];
+      : [...agents, { id: Date.now().toString(), name: aName, title: aTitle, phone: aPhone, email: aEmail, license: aLicense, specialty: aSpecialty, photo: aPhoto, instagram: aInstagram, facebook: aFacebook, linkedin: aLinkedin, bio: aBio }];
     setAgents(updated);
     saveStorage("slreg_agents", updated);
     flash(setAgentSuccess, editingAgent ? "Agent updated!" : "Agent added!");
@@ -286,15 +284,6 @@ export default function AdminPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                 <Field label="Full Name *" value={aName} onChange={setAName} placeholder="Jane Smith" />
                 <Field label="Title / Role" value={aTitle} onChange={setATitle} placeholder="Buyer's Agent" />
-                <div>
-                  <label className="block text-xs text-gray-500 uppercase tracking-wider mb-1.5 font-semibold">Team Category</label>
-                  <select value={aCategory} onChange={e => setACategory(e.target.value as "leadership" | "agents" | "staff")}
-                    className="w-full border border-gray-300 px-4 py-2.5 text-sm outline-none focus:border-gray-600">
-                    <option value="leadership">Leadership / Managing Broker</option>
-                    <option value="agents">Sales Agents</option>
-                    <option value="staff">Administrative Staff</option>
-                  </select>
-                </div>
                 <Field label="Phone" value={aPhone} onChange={setAPhone} placeholder="(317) 555-0000" />
                 <Field label="Email" value={aEmail} onChange={setAEmail} placeholder="jane@listwithlew.com" />
                 <Field label="License #" value={aLicense} onChange={setALicense} placeholder="RB12345678" />
@@ -367,7 +356,6 @@ export default function AdminPage() {
                     <tr className="bg-[#0d0d0d] text-white text-xs tracking-wide">
                       <th className="px-4 py-3 text-left">Photo</th>
                       <th className="px-4 py-3 text-left">Name</th>
-                      <th className="px-4 py-3 text-left">Category</th>
                       <th className="px-4 py-3 text-left">Title</th>
                       <th className="px-4 py-3 text-left">Phone</th>
                       <th className="px-4 py-3 text-left">Email</th>
@@ -384,7 +372,6 @@ export default function AdminPage() {
                           }
                         </td>
                         <td className="px-4 py-3 text-sm font-semibold text-gray-900">{a.name}</td>
-                        <td className="px-4 py-3 text-xs text-gray-500 capitalize">{a.category === "leadership" ? "Leadership" : a.category === "staff" ? "Staff" : "Agent"}</td>
                         <td className="px-4 py-3 text-xs text-gray-500">{a.title}</td>
                         <td className="px-4 py-3 text-xs text-gray-500">{a.phone}</td>
                         <td className="px-4 py-3 text-xs text-gray-500">{a.email}</td>

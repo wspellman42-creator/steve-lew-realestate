@@ -28,7 +28,7 @@ export default function AgentGrid({ category }: { category?: string }) {
       const raw = localStorage.getItem("slreg_agents");
       if (raw) {
         const all: Agent[] = JSON.parse(raw);
-        setAgents(category ? all.filter(a => (a.category ?? "agents") === category) : all);
+        setAgents(category ? all.filter(a => a.category === category) : all);
       }
     } catch { /* ignore */ }
   }, [category]);
