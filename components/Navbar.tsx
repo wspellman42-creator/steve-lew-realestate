@@ -30,8 +30,9 @@ const navLinks = [
     href: "/about",
     children: [
       { label: "About Us", href: "/about" },
-      { label: "Contact Us", href: "/about#contact" },
-      { label: "Reviews", href: "/about#reviews" },
+      { label: "Leadership", href: "/about/leadership" },
+      { label: "Sales Agents", href: "/about/agents" },
+      { label: "Administrative Staff", href: "/about/staff" },
     ],
   },
   { label: "HOME VALUATION", href: "/home-valuation" },
