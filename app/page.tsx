@@ -74,7 +74,7 @@ export default function HomePage() {
           </div>
           <div className="relative h-[400px] md:h-[500px]">
             <Image
-              src="/images/awards-collage.jpg"
+              src="/images/awards-collage.webp"
               alt="Steve Lew Real Estate Group — Awards & Recognition"
               fill
               className="object-cover object-center"

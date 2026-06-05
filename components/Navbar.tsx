@@ -127,12 +127,12 @@ export default function Navbar() {
         {/* Register + Sign In + Hamburger */}
         <div className="flex items-center gap-1 ml-auto">
           <div className="hidden lg:flex items-center">
-            <button className="text-white text-[11px] tracking-[0.15em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold">
+            <Link href="/admin" className="text-white text-[11px] tracking-[0.15em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold">
               REGISTER
-            </button>
-            <button className="text-white text-[11px] tracking-[0.15em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold">
+            </Link>
+            <Link href="/admin" className="text-white text-[11px] tracking-[0.15em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold">
               SIGN IN
-            </button>
+            </Link>
           </div>
           <button
             className="text-white p-2 hover:text-white/70 transition-colors ml-2"
@@ -162,12 +162,12 @@ export default function Navbar() {
               </li>
             ))}
             <li className="pt-4 flex gap-6">
-              <button className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white">
+              <Link href="/admin" onClick={() => setMobileOpen(false)} className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white">
                 REGISTER
-              </button>
-              <button className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white">
+              </Link>
+              <Link href="/admin" onClick={() => setMobileOpen(false)} className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white">
                 SIGN IN
-              </button>
+              </Link>
             </li>
           </ul>
         </div>
