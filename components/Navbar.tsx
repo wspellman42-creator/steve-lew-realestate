@@ -34,6 +34,7 @@ const navLinks = [
       { label: "Reviews", href: "/about#reviews" },
     ],
   },
+  { label: "HOME VALUATION", href: "/home-valuation" },
   { label: "MARKET SNAPSHOT", href: "/snapshot" },
   { label: "MORTGAGE CALCULATOR", href: "/mortgage-calculator" },
 ];
