@@ -67,7 +67,7 @@ export default function HomeValuationPage() {
                   value={address}
                   onChange={e => setAddress(e.target.value)}
                   onKeyDown={e => e.key === "Enter" && address.trim() && setStep(2)}
-                  className="flex-1 px-6 py-5 text-gray-900 text-base outline-none placeholder:text-gray-400 text-left"
+                  className="flex-1 bg-white px-6 py-5 text-gray-900 text-base outline-none placeholder:text-gray-400 text-left"
                   autoFocus
                 />
                 <button
