@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const TO = "info@listwithlew.com";
+const TO = "will@listwithlew.com";
 
 function row(label: string, value: string) {
   return `<tr>
