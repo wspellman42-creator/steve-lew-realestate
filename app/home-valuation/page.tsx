@@ -79,6 +79,57 @@ export default function HomeValuationPage() {
               </div>
             )}
 
+            {/* Step 3 — Confirm & submit */}
+            {step === 3 && (
+              <div className="bg-white p-8 shadow-2xl text-left">
+                <div className="flex items-center gap-2 mb-4">
+                  <CheckCircle size={16} className="text-green-500" />
+                  <p className="text-sm text-gray-500">Review your information below</p>
+                </div>
+                <h2 className="font-serif text-2xl text-gray-900 mb-1">Get Your Free Report</h2>
+                <p className="text-sm text-gray-500 mb-6">
+                  Everything looks great! Submit below and we&apos;ll send your personalized home valuation within 24 hours.
+                </p>
+                <div className="bg-gray-50 border border-gray-100 rounded p-4 mb-6 space-y-2 text-sm">
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Address</span>
+                    <span className="text-gray-800 font-medium text-right max-w-[60%] truncate">{address}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Name</span>
+                    <span className="text-gray-800 font-medium">{name}</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-400">Email</span>
+                    <span className="text-gray-800 font-medium">{email}</span>
+                  </div>
+                  {phone && (
+                    <div className="flex justify-between">
+                      <span className="text-gray-400">Phone</span>
+                      <span className="text-gray-800 font-medium">{phone}</span>
+                    </div>
+                  )}
+                </div>
+                <div className="flex gap-3">
+                  <button
+                    onClick={() => setStep(2)}
+                    className="border border-gray-300 px-6 py-3.5 text-sm text-gray-600 hover:bg-gray-50 transition-colors"
+                  >
+                    Back
+                  </button>
+                  <button
+                    onClick={() => setSubmitted(true)}
+                    className="flex-1 bg-red-600 hover:bg-red-700 text-white py-3.5 text-sm font-semibold tracking-wide transition-colors flex items-center justify-center gap-2"
+                  >
+                    <CheckCircle size={15} /> SUBMIT MY VALUATION REQUEST
+                  </button>
+                </div>
+                <p className="text-[11px] text-gray-400 mt-4 text-center">
+                  By submitting, you agree to be contacted by Steve Lew Real Estate Group. We respect your privacy.
+                </p>
+              </div>
+            )}
+
             {/* Step 2 — Contact info */}
             {step === 2 && (
               <div className="bg-white p-8 shadow-2xl text-left">
@@ -121,10 +172,10 @@ export default function HomeValuationPage() {
                     Back
                   </button>
                   <button
-                    onClick={() => { if (name && email) setSubmitted(true); }}
+                    onClick={() => { if (name && email) setStep(3); }}
                     className="flex-1 bg-red-600 hover:bg-red-700 text-white py-3.5 text-sm font-semibold tracking-wide transition-colors"
                   >
-                    GET MY FREE VALUATION
+                    NEXT: GET MY REPORT
                   </button>
                 </div>
                 <p className="text-[11px] text-gray-400 mt-4 text-center">

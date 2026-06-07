@@ -3,8 +3,9 @@ import Image from "next/image";
 import { CheckCircle, ArrowRight } from "lucide-react";
 import PropertyCard from "@/components/PropertyCard";
 import TestimonialsCarousel from "@/components/TestimonialsCarousel";
-import { mockListings, blogPosts } from "@/lib/mockData";
+import { mockListings } from "@/lib/mockData";
 import HomeSearch from "@/components/HomeSearch";
+import HomeBlogSection from "@/components/HomeBlogSection";
 
 const awards = [
   "Featured in Indy Real Producers Magazine",
@@ -195,50 +196,7 @@ export default function HomePage() {
       <TestimonialsCarousel />
 
       {/* ─── BLOG ─────────────────────────────────────────────── */}
-      <section className="bg-[#0d0d0d] py-20 px-6">
-        <div className="max-w-[1200px] mx-auto">
-          <div className="flex items-end justify-between mb-12">
-            <h2
-              className="font-serif text-3xl md:text-4xl text-white"
-              style={{ fontWeight: 600 }}
-            >
-              SLREG BLOG
-            </h2>
-            <Link
-              href="/blog"
-              className="flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase text-white/40 hover:text-white transition-colors font-semibold"
-            >
-              MORE BLOG ARTICLES <ArrowRight size={13} />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
-              <Link key={post.slug} href={`/blog/${post.slug}`} className="group">
-                <div className="relative h-52 overflow-hidden mb-5">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <p className="text-[11px] text-white/40 mb-2 tracking-wider">{post.date}</p>
-                <h3
-                  className="font-serif text-xl text-white mb-3 group-hover:text-white/80 transition-colors"
-                  style={{ fontWeight: 600 }}
-                >
-                  {post.title}
-                </h3>
-                <p className="text-xs text-white/50 leading-relaxed line-clamp-3">{post.excerpt}</p>
-                <p className="text-[11px] tracking-[0.2em] uppercase text-white/30 mt-4 group-hover:text-white/60 transition-colors font-semibold">
-                  MORE
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HomeBlogSection />
     </>
   );
 }

@@ -1,7 +1,10 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
 import { Heart, Bed, Bath, Maximize2 } from "lucide-react";
 import { Listing, formatPrice } from "@/lib/mockData";
+import { useUser } from "@/lib/userContext";
 
 interface PropertyCardProps {
   listing: Listing;
@@ -16,6 +19,9 @@ const statusColor: Record<string, string> = {
 };
 
 export default function PropertyCard({ listing, view = "grid" }: PropertyCardProps) {
+  const { isFavorite, toggleFavorite } = useUser();
+  const fav = isFavorite(listing.id);
+
   if (view === "list") {
     return (
       <div className="flex gap-4 bg-white border border-gray-200 hover:shadow-md transition-shadow">
@@ -45,8 +51,12 @@ export default function PropertyCard({ listing, view = "grid" }: PropertyCardPro
             </span>
           </div>
         </div>
-        <button className="flex-shrink-0 pr-4 self-center text-gray-300 hover:text-red-500 transition-colors">
-          <Heart size={16} />
+        <button
+          onClick={() => toggleFavorite(listing.id)}
+          className={`flex-shrink-0 pr-4 self-center transition-colors ${fav ? "text-red-500" : "text-gray-300 hover:text-red-500"}`}
+          aria-label={fav ? "Remove from favorites" : "Save to favorites"}
+        >
+          <Heart size={16} fill={fav ? "currentColor" : "none"} />
         </button>
       </div>
     );
@@ -63,13 +73,11 @@ export default function PropertyCard({ listing, view = "grid" }: PropertyCardPro
             fill
             className="object-cover group-hover:scale-105 transition-transform duration-500"
           />
-          {/* Status Badge */}
           <div
             className={`absolute top-3 left-3 text-white text-[11px] font-medium px-2.5 py-1 tracking-wide ${statusColor[listing.status] || "bg-gray-500"}`}
           >
             {listing.status}
           </div>
-          {/* Open House Badge */}
           {listing.openHouse && (
             <div className="absolute bottom-3 left-3 bg-black/80 text-white text-[10px] px-2 py-1">
               {listing.openHouse}
@@ -82,8 +90,12 @@ export default function PropertyCard({ listing, view = "grid" }: PropertyCardPro
       <div className="p-4">
         <div className="flex items-start justify-between gap-2">
           <p className="text-lg font-bold text-gray-900">{formatPrice(listing.price)}</p>
-          <button className="text-gray-300 hover:text-red-500 transition-colors flex-shrink-0 mt-0.5">
-            <Heart size={16} />
+          <button
+            onClick={() => toggleFavorite(listing.id)}
+            className={`transition-colors flex-shrink-0 mt-0.5 ${fav ? "text-red-500" : "text-gray-300 hover:text-red-500"}`}
+            aria-label={fav ? "Remove from favorites" : "Save to favorites"}
+          >
+            <Heart size={16} fill={fav ? "currentColor" : "none"} />
           </button>
         </div>
         <Link href={`/listing/${listing.id}`}>

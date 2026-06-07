@@ -221,14 +221,14 @@ export default function AdminPage() {
               placeholder="Email address"
               value={email}
               onChange={e => setEmail(e.target.value)}
-              className="border border-gray-300 px-4 py-3 text-sm outline-none focus:border-gray-600"
+              className="border border-gray-300 px-4 py-3 text-sm text-gray-900 outline-none focus:border-gray-600 placeholder:text-gray-400"
             />
             <input
               type="password"
               placeholder="Password"
               value={password}
               onChange={e => setPassword(e.target.value)}
-              className="border border-gray-300 px-4 py-3 text-sm outline-none focus:border-gray-600"
+              className="border border-gray-300 px-4 py-3 text-sm text-gray-900 outline-none focus:border-gray-600 placeholder:text-gray-400"
             />
             {loginError && <p className="text-red-600 text-xs">{loginError}</p>}
             <button type="submit" className="bg-[#0d0d0d] text-white py-3 text-xs tracking-[0.2em] uppercase hover:bg-gray-800 transition-colors font-semibold">

@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Heart, LogOut } from "lucide-react";
+import { useUser } from "@/lib/userContext";
 
 const navLinks = [
   { label: "HOME", href: "/" },
@@ -44,6 +45,7 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const pathname = usePathname();
+  const { user, openAuth, logout } = useUser();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -61,7 +63,6 @@ export default function Navbar() {
       }`}
     >
       <nav className="max-w-[1500px] mx-auto px-4 xl:px-8 flex items-center h-[72px]">
-        {/* Real logo from listwithlew.com */}
         <Link href="/" className="flex items-center flex-shrink-0 mr-8">
           <Image
             src="/images/logo.png"
@@ -124,15 +125,48 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Register + Sign In + Hamburger */}
+        {/* Auth area */}
         <div className="flex items-center gap-1 ml-auto">
-          <div className="hidden lg:flex items-center">
-            <Link href="/admin" className="text-white text-[11px] tracking-[0.15em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold">
-              REGISTER
-            </Link>
-            <Link href="/admin" className="text-white text-[11px] tracking-[0.15em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold">
-              SIGN IN
-            </Link>
+          <div className="hidden lg:flex items-center gap-1">
+            {user ? (
+              <>
+                <button
+                  onClick={() => openAuth("favorites")}
+                  className="flex items-center gap-1.5 text-white text-[11px] tracking-[0.15em] uppercase px-3 py-2 hover:text-white/70 transition-colors font-semibold"
+                >
+                  <Heart size={12} />
+                  MY FAVORITES
+                  {user.favorites.length > 0 && (
+                    <span className="bg-red-600 text-white text-[9px] rounded-full w-4 h-4 flex items-center justify-center font-bold">
+                      {user.favorites.length}
+                    </span>
+                  )}
+                </button>
+                <div className="w-px h-4 bg-white/20" />
+                <span className="text-white/50 text-[11px] px-2">Hi, {user.name.split(" ")[0]}</span>
+                <button
+                  onClick={logout}
+                  className="text-white/50 hover:text-white text-[11px] tracking-[0.15em] uppercase px-3 py-2 transition-colors font-semibold flex items-center gap-1"
+                >
+                  <LogOut size={11} /> LOG OUT
+                </button>
+              </>
+            ) : (
+              <>
+                <button
+                  onClick={() => openAuth("register")}
+                  className="text-white text-[11px] tracking-[0.15em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold"
+                >
+                  REGISTER
+                </button>
+                <button
+                  onClick={() => openAuth("signin")}
+                  className="text-white text-[11px] tracking-[0.15em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold"
+                >
+                  SIGN IN
+                </button>
+              </>
+            )}
           </div>
           <button
             className="text-white p-2 hover:text-white/70 transition-colors ml-2"
@@ -162,12 +196,37 @@ export default function Navbar() {
               </li>
             ))}
             <li className="pt-4 flex gap-6">
-              <Link href="/admin" onClick={() => setMobileOpen(false)} className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white">
-                REGISTER
-              </Link>
-              <Link href="/admin" onClick={() => setMobileOpen(false)} className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white">
-                SIGN IN
-              </Link>
+              {user ? (
+                <>
+                  <button
+                    onClick={() => { setMobileOpen(false); openAuth("favorites"); }}
+                    className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white flex items-center gap-1"
+                  >
+                    <Heart size={11} /> MY FAVORITES
+                  </button>
+                  <button
+                    onClick={() => { setMobileOpen(false); logout(); }}
+                    className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white"
+                  >
+                    LOG OUT
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button
+                    onClick={() => { setMobileOpen(false); openAuth("register"); }}
+                    className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white"
+                  >
+                    REGISTER
+                  </button>
+                  <button
+                    onClick={() => { setMobileOpen(false); openAuth("signin"); }}
+                    className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white"
+                  >
+                    SIGN IN
+                  </button>
+                </>
+              )}
             </li>
           </ul>
         </div>
