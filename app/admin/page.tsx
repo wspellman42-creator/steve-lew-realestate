@@ -332,7 +332,7 @@ export default function AdminPage() {
                   placeholder="Brief bio..."
                   value={aBio}
                   onChange={e => setABio(e.target.value)}
-                  className="w-full border border-gray-300 px-4 py-3 text-sm outline-none focus:border-gray-600 resize-none"
+                  className="w-full border border-gray-300 px-4 py-3 text-sm text-gray-900 outline-none focus:border-gray-600 resize-none placeholder:text-gray-400"
                 />
               </div>
 
@@ -404,13 +404,13 @@ export default function AdminPage() {
                 <div>
                   <label className="block text-xs text-gray-500 uppercase tracking-wider mb-1.5 font-semibold">Rating (1–5)</label>
                   <input type="number" min={1} max={5} value={tRating} onChange={e => setTRating(Number(e.target.value))}
-                    className="w-full border border-gray-300 px-4 py-2.5 text-sm outline-none focus:border-gray-600" />
+                    className="w-full border border-gray-300 px-4 py-2.5 text-sm text-gray-900 outline-none focus:border-gray-600 placeholder:text-gray-400" />
                 </div>
               </div>
               <div className="mb-6">
                 <label className="block text-xs text-gray-500 uppercase tracking-wider mb-1.5 font-semibold">Review</label>
                 <textarea rows={3} value={tReview} onChange={e => setTReview(e.target.value)} placeholder="Client review text..."
-                  className="w-full border border-gray-300 px-4 py-3 text-sm outline-none focus:border-gray-600 resize-none" />
+                  className="w-full border border-gray-300 px-4 py-3 text-sm text-gray-900 outline-none focus:border-gray-600 resize-none placeholder:text-gray-400" />
               </div>
               <button onClick={saveTestimonial} className="bg-[#0d0d0d] text-white px-8 py-3 text-xs tracking-[0.15em] uppercase font-semibold hover:bg-gray-800 transition-colors">
                 Add Testimonial
@@ -464,7 +464,7 @@ export default function AdminPage() {
               <div className="mb-6">
                 <label className="block text-xs text-gray-500 uppercase tracking-wider mb-1.5 font-semibold">Content</label>
                 <textarea rows={5} value={bContent} onChange={e => setBContent(e.target.value)} placeholder="Full post content..."
-                  className="w-full border border-gray-300 px-4 py-3 text-sm outline-none focus:border-gray-600 resize-none" />
+                  className="w-full border border-gray-300 px-4 py-3 text-sm text-gray-900 outline-none focus:border-gray-600 resize-none placeholder:text-gray-400" />
               </div>
               <button onClick={saveBlogPost} className="bg-[#0d0d0d] text-white px-8 py-3 text-xs tracking-[0.15em] uppercase font-semibold hover:bg-gray-800 transition-colors">
                 Publish Post
@@ -515,7 +515,7 @@ function Field({ label, value, onChange, placeholder }: { label: string; value: 
         value={value}
         onChange={e => onChange(e.target.value)}
         placeholder={placeholder}
-        className="w-full border border-gray-300 px-4 py-2.5 text-sm outline-none focus:border-gray-600"
+        className="w-full border border-gray-300 px-4 py-2.5 text-sm text-gray-900 outline-none focus:border-gray-600 placeholder:text-gray-400"
       />
     </div>
   );
