@@ -118,7 +118,16 @@ export default function HomeValuationPage() {
                     Back
                   </button>
                   <button
-                    onClick={() => setSubmitted(true)}
+                    onClick={async () => {
+                      try {
+                        await fetch("/api/send-email", {
+                          method: "POST",
+                          headers: { "Content-Type": "application/json" },
+                          body: JSON.stringify({ type: "home-valuation", address, name, email, phone }),
+                        });
+                      } catch {}
+                      setSubmitted(true);
+                    }}
                     className="flex-1 bg-red-600 hover:bg-red-700 text-white py-3.5 text-sm font-semibold tracking-wide transition-colors flex items-center justify-center gap-2"
                   >
                     <CheckCircle size={15} /> SUBMIT MY VALUATION REQUEST
