@@ -45,48 +45,62 @@ export default function AgentGrid({ category }: { category?: string }) {
   }
 
   return (
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {agents.map((member) => (
-        <div key={member.id} className="group">
-          <div className="relative w-full aspect-square mb-4 overflow-hidden bg-gray-100">
+        <div key={member.id} className="border border-gray-200 overflow-hidden transition-all duration-200 hover:shadow-[0_8px_40px_rgba(0,0,0,0.15)] hover:-translate-y-1">
+          {/* Photo */}
+          <div className="h-[260px] bg-gradient-to-br from-gray-200 to-gray-100 flex items-center justify-center overflow-hidden">
             {member.photo ? (
               <img
                 src={member.photo}
                 alt={member.name}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-cover"
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center bg-gray-100">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#ccc" strokeWidth="1.5">
+              <div className="text-center text-gray-300">
+                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" className="opacity-40">
                   <circle cx="12" cy="8" r="4" />
                   <path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6" />
                 </svg>
               </div>
             )}
           </div>
-          <p className="font-semibold text-gray-900 text-sm leading-snug">{member.name}</p>
-          {member.title && <p className="text-xs text-gray-500 mt-0.5">{member.title}</p>}
-          {member.specialty && <p className="text-xs text-gray-400 mt-0.5">{member.specialty}</p>}
-          <div className="flex gap-2 mt-2 flex-wrap">
-            {member.phone && (
-              <a href={`tel:${member.phone}`} className="text-gray-400 hover:text-gray-700 transition-colors">
-                <Phone size={13} />
-              </a>
+          {/* Info */}
+          <div className="p-5">
+            <p className="font-serif text-xl font-bold text-gray-900 mb-1">{member.name}</p>
+            {member.title && (
+              <p className="text-[13px] font-semibold tracking-[0.5px] uppercase text-red-600 mb-3">{member.title}</p>
             )}
-            {member.email && (
-              <a href={`mailto:${member.email}`} className="text-gray-400 hover:text-gray-700 transition-colors">
-                <Mail size={13} />
-              </a>
+            {member.bio && (
+              <p className="text-sm text-gray-500 mb-4 leading-relaxed">{member.bio}</p>
             )}
-            {member.instagram && (
-              <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-700 text-[11px] font-bold transition-colors">IG</a>
-            )}
-            {member.facebook && (
-              <a href={member.facebook} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-700 text-[11px] font-bold transition-colors">FB</a>
-            )}
-            {member.linkedin && (
-              <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-700 text-[11px] font-bold transition-colors">in</a>
-            )}
+            <div className="flex flex-col gap-1.5">
+              {member.phone && (
+                <a href={`tel:${member.phone}`} className="flex items-center gap-1.5 text-[13px] text-gray-500 hover:text-red-600 transition-colors">
+                  <Phone size={13} />
+                  {member.phone}
+                </a>
+              )}
+              {member.email && (
+                <a href={`mailto:${member.email}`} className="flex items-center gap-1.5 text-[13px] text-gray-500 hover:text-red-600 transition-colors">
+                  <Mail size={13} />
+                  {member.email}
+                </a>
+              )}
+              {(member.instagram || member.facebook || member.linkedin) && (
+                <div className="flex gap-2 mt-1">
+                  {member.instagram && (
+                    <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="text-[11px] font-bold text-gray-400 hover:text-red-600 transition-colors">IG</a>
+                  )}
+                  {member.facebook && (
+                    <a href={member.facebook} target="_blank" rel="noopener noreferrer" className="text-[11px] font-bold text-gray-400 hover:text-red-600 transition-colors">FB</a>
+                  )}
+                  {member.linkedin && (
+                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-[11px] font-bold text-gray-400 hover:text-red-600 transition-colors">in</a>
+                  )}
+                </div>
+              )}
+            </div>
           </div>
         </div>
       ))}
