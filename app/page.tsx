@@ -54,32 +54,33 @@ export default function HomePage() {
       </section>
 
       {/* ─── MAKING A DIFFERENCE ─────────────────────────────── */}
-      <section className="bg-[#111111] py-20 px-6">
-        <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14 items-center">
+      <section className="bg-[#111111] flex flex-col md:flex-row min-h-screen">
+        {/* Left: full-bleed collage */}
+        <div className="relative w-full md:w-1/2 h-[55vw] md:h-auto min-h-[400px]">
+          <Image
+            src="/images/awards-collage.webp"
+            alt="Steve Lew Real Estate Group — Awards & Recognition"
+            fill
+            className="object-cover object-center"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        {/* Right: awards text */}
+        <div className="w-full md:w-1/2 flex items-center px-10 lg:px-20 py-20">
           <div>
-            <p className="text-[11px] tracking-[0.35em] uppercase text-white/40 mb-4 font-semibold">
-              MAKING A DIFFERENCE
-            </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-white mb-10 font-semibold">
-              Award-Winning Real Estate Excellence
-            </h2>
-            <ul className="space-y-4">
+            <div className="flex items-center gap-5 mb-10">
+              <div className="w-14 h-14 border border-white/30 flex-shrink-0" />
+              <h2 className="text-white font-bold text-xl tracking-[0.15em] uppercase">
+                MAKING A DIFFERENCE
+              </h2>
+            </div>
+            <ul className="space-y-5">
               {awards.map((award) => (
-                <li key={award} className="flex items-start gap-3 text-white/70 text-sm leading-relaxed">
-                  <CheckCircle size={14} className="text-white/30 mt-0.5 flex-shrink-0" />
+                <li key={award} className="text-white/70 text-sm leading-relaxed">
                   {award}
                 </li>
               ))}
             </ul>
-          </div>
-          <div className="relative h-[440px] md:h-[550px]">
-            <Image
-              src="/images/awards-collage.webp"
-              alt="Steve Lew Real Estate Group — Awards & Recognition"
-              fill
-              className="object-cover object-center"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
           </div>
         </div>
       </section>
