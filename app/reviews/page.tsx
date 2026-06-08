@@ -55,7 +55,7 @@ export default function ReviewsPage() {
   return (
     <div className="min-h-screen pt-[72px]">
       {/* Hero */}
-      <section className="relative h-[38vh] min-h-[260px] flex items-end">
+      <section className="relative h-[42vh] min-h-[286px] flex items-end">
         <Image src="/images/about-team-group.webp" alt="Reviews" fill className="object-cover object-top" priority />
         <div className="absolute inset-0 bg-black/55 pointer-events-none" />
         <div className="relative z-10 px-6 pb-12 max-w-[1200px] mx-auto w-full">

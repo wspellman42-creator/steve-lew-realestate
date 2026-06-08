@@ -4,7 +4,7 @@ import AgentGrid from "@/components/AgentGrid";
 export default function StaffPage() {
   return (
     <div className="min-h-screen pt-[72px]">
-      <section className="relative h-[45vh] min-h-[320px] flex items-end">
+      <section className="relative h-[50vh] min-h-[352px] flex items-end">
         <Image src="/images/about-team-group.webp" alt="Steve Lew Real Estate Staff" fill className="object-cover" priority />
         <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 px-6 pb-14 max-w-[1200px] mx-auto w-full">

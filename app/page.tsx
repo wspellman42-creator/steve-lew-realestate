@@ -72,7 +72,7 @@ export default function HomePage() {
               ))}
             </ul>
           </div>
-          <div className="relative h-[400px] md:h-[500px]">
+          <div className="relative h-[440px] md:h-[550px]">
             <Image
               src="/images/awards-collage.webp"
               alt="Steve Lew Real Estate Group — Awards & Recognition"
@@ -87,7 +87,7 @@ export default function HomePage() {
       {/* ─── SERVING CENTRAL INDIANA ──────────────────────────── */}
       <section className="bg-[#0d0d0d] py-20 px-6">
         <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14 items-center">
-          <div className="relative h-80 md:h-[440px]">
+          <div className="relative h-80 md:h-[484px]">
             <Image
               src="/images/steve-headshot.webp"
               alt="Steve Lew — Managing Broker"
@@ -147,7 +147,7 @@ export default function HomePage() {
       {/* ─── FULL SERVICE BROKERAGE ───────────────────────────── */}
       <section className="bg-[#111111] py-20 px-6">
         <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14 items-center">
-          <div className="relative h-[420px]">
+          <div className="relative h-[462px]">
             <Image
               src="/images/truck.webp"
               alt="Steve Lew Real Estate Group moving truck"

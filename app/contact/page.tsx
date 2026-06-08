@@ -27,7 +27,7 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen pt-[72px]">
       {/* Hero */}
-      <section className="relative h-[40vh] min-h-[280px] flex items-end">
+      <section className="relative h-[44vh] min-h-[308px] flex items-end">
         <Image src="/images/about-team-group.webp" alt="Contact Steve Lew Real Estate" fill className="object-cover object-top" priority />
         <div className="absolute inset-0 bg-black/55 pointer-events-none" />
         <div className="relative z-10 px-6 pb-12 max-w-[1200px] mx-auto w-full">

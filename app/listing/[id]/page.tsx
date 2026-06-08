@@ -33,7 +33,7 @@ export default async function ListingDetailPage({
       {/* Images */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-1 bg-gray-100">
         {listing.images.map((img, i) => (
-          <div key={i} className={`relative ${i === 0 ? "h-80 md:h-[500px] md:col-span-1" : "h-48 md:h-[245px]"}`}>
+          <div key={i} className={`relative ${i === 0 ? "h-80 md:h-[550px] md:col-span-1" : "h-48 md:h-[270px]"}`}>
             <Image src={img} alt={`${listing.address} - photo ${i + 1}`} fill className="object-cover" />
           </div>
         ))}
