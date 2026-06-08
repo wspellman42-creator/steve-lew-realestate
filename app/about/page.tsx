@@ -30,7 +30,7 @@ export default function AboutPage() {
         />
         <div className="absolute inset-0 bg-black/45 pointer-events-none" />
         <div className="relative z-10 text-center px-6">
-          <h1 className="font-serif text-2xl md:text-4xl text-white font-bold mb-3">
+          <h1 className="font-serif text-[1.8rem] md:text-[2.7rem] text-white font-bold mb-3">
             Experienced and Professional Team of Agents
           </h1>
           <div className="w-16 h-0.5 bg-white mx-auto mb-4" />
