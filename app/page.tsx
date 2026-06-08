@@ -86,17 +86,19 @@ export default function HomePage() {
       </section>
 
       {/* ─── SERVING CENTRAL INDIANA ──────────────────────────── */}
-      <section className="bg-[#0d0d0d] py-20 px-6">
-        <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14 items-center">
-          <div className="relative h-80 md:h-[484px]">
-            <Image
-              src="/images/steve-headshot.webp"
-              alt="Steve Lew — Managing Broker"
-              fill
-              className="object-cover object-top"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
+      <section className="bg-[#0d0d0d] flex flex-col md:flex-row min-h-screen">
+        {/* Left: full-bleed headshot */}
+        <div className="relative w-full md:w-1/2 h-[55vw] md:h-auto min-h-[400px]">
+          <Image
+            src="/images/steve-headshot.webp"
+            alt="Steve Lew — Managing Broker"
+            fill
+            className="object-cover object-top"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </div>
+        {/* Right: text */}
+        <div className="w-full md:w-1/2 flex items-center px-10 lg:px-20 py-20">
           <div>
             <p className="text-[11px] tracking-[0.35em] uppercase text-white/40 mb-4 font-semibold">
               CENTRAL INDIANA
