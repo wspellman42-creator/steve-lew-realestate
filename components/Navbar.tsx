@@ -84,7 +84,7 @@ export default function Navbar() {
                   onMouseLeave={() => setOpenDropdown(null)}
                 >
                   <button
-                    className={`flex items-center gap-1 px-3 py-5 text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors relative ${
+                    className={`flex items-center gap-1 px-3 py-5 text-xs font-semibold tracking-[0.12em] uppercase transition-colors relative ${
                       isActive(link.href) ? "text-white" : "text-white hover:text-white/70"
                     }`}
                   >
@@ -100,7 +100,7 @@ export default function Navbar() {
                         <Link
                           key={child.href}
                           href={child.href}
-                          className="block px-5 py-2.5 text-[11px] text-white/70 hover:text-white hover:bg-white/5 tracking-[0.12em] uppercase transition-colors"
+                          className="block px-5 py-2.5 text-xs text-white/70 hover:text-white hover:bg-white/5 tracking-[0.12em] uppercase transition-colors"
                         >
                           {child.label}
                         </Link>
@@ -111,7 +111,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   href={link.href}
-                  className={`block px-3 py-5 text-[11px] font-semibold tracking-[0.15em] uppercase transition-colors relative ${
+                  className={`block px-3 py-5 text-xs font-semibold tracking-[0.12em] uppercase transition-colors relative ${
                     isActive(link.href) ? "text-white" : "text-white hover:text-white/70"
                   }`}
                 >
@@ -132,7 +132,7 @@ export default function Navbar() {
               <>
                 <button
                   onClick={() => openAuth("favorites")}
-                  className="flex items-center gap-1.5 text-white text-[11px] tracking-[0.15em] uppercase px-3 py-2 hover:text-white/70 transition-colors font-semibold"
+                  className="flex items-center gap-1.5 text-white text-xs tracking-[0.12em] uppercase px-3 py-2 hover:text-white/70 transition-colors font-semibold"
                 >
                   <Heart size={12} />
                   MY FAVORITES
@@ -146,7 +146,7 @@ export default function Navbar() {
                 <span className="text-white/50 text-[11px] px-2">Hi, {user.name.split(" ")[0]}</span>
                 <button
                   onClick={logout}
-                  className="text-white/50 hover:text-white text-[11px] tracking-[0.15em] uppercase px-3 py-2 transition-colors font-semibold flex items-center gap-1"
+                  className="text-white/50 hover:text-white text-xs tracking-[0.12em] uppercase px-3 py-2 transition-colors font-semibold flex items-center gap-1"
                 >
                   <LogOut size={11} /> LOG OUT
                 </button>
@@ -155,13 +155,13 @@ export default function Navbar() {
               <>
                 <button
                   onClick={() => openAuth("register")}
-                  className="text-white text-[11px] tracking-[0.15em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold"
+                  className="text-white text-xs tracking-[0.12em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold"
                 >
                   REGISTER
                 </button>
                 <button
                   onClick={() => openAuth("signin")}
-                  className="text-white text-[11px] tracking-[0.15em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold"
+                  className="text-white text-xs tracking-[0.12em] uppercase px-4 py-2 hover:text-white/70 transition-colors font-semibold"
                 >
                   SIGN IN
                 </button>
@@ -169,7 +169,7 @@ export default function Navbar() {
             )}
           </div>
           <button
-            className="text-white p-2 hover:text-white/70 transition-colors ml-2"
+            className="lg:hidden text-white p-2 hover:text-white/70 transition-colors ml-2"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
@@ -186,7 +186,7 @@ export default function Navbar() {
               <li key={link.label}>
                 <Link
                   href={link.href}
-                  className={`block py-3 text-[11px] tracking-[0.2em] uppercase border-b border-white/5 transition-colors font-semibold ${
+                  className={`block py-3 text-xs tracking-[0.15em] uppercase border-b border-white/5 transition-colors font-semibold ${
                     isActive(link.href) ? "text-white" : "text-white/70 hover:text-white"
                   }`}
                   onClick={() => setMobileOpen(false)}
@@ -200,13 +200,13 @@ export default function Navbar() {
                 <>
                   <button
                     onClick={() => { setMobileOpen(false); openAuth("favorites"); }}
-                    className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white flex items-center gap-1"
+                    className="text-white/70 text-xs tracking-[0.15em] uppercase hover:text-white flex items-center gap-1"
                   >
                     <Heart size={11} /> MY FAVORITES
                   </button>
                   <button
                     onClick={() => { setMobileOpen(false); logout(); }}
-                    className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white"
+                    className="text-white/70 text-xs tracking-[0.15em] uppercase hover:text-white"
                   >
                     LOG OUT
                   </button>
@@ -215,13 +215,13 @@ export default function Navbar() {
                 <>
                   <button
                     onClick={() => { setMobileOpen(false); openAuth("register"); }}
-                    className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white"
+                    className="text-white/70 text-xs tracking-[0.15em] uppercase hover:text-white"
                   >
                     REGISTER
                   </button>
                   <button
                     onClick={() => { setMobileOpen(false); openAuth("signin"); }}
-                    className="text-white/70 text-[11px] tracking-[0.2em] uppercase hover:text-white"
+                    className="text-white/70 text-xs tracking-[0.15em] uppercase hover:text-white"
                   >
                     SIGN IN
                   </button>

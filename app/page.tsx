@@ -37,12 +37,11 @@ export default function HomePage() {
         <div className="relative z-10 text-center px-6 max-w-[960px] mx-auto mb-10">
           {/* Main headline — bold serif, matching original */}
           <h1
-            className="font-serif text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-6"
-            style={{ fontWeight: 700 }}
+            className="font-serif text-4xl md:text-5xl lg:text-6xl text-white leading-[1.1] mb-6 font-bold"
           >
             Discover Your Dream Home with Steve Lew Real Estate Group
           </h1>
-          <p className="text-white/70 text-lg md:text-xl leading-relaxed max-w-[750px] mx-auto">
+          <p className="text-white/70 text-base md:text-lg leading-relaxed max-w-[750px] mx-auto">
             Explore exceptional homes for sale in central Indiana with our expert realtors,
             dedicated to finding the perfect property for you.
           </p>
@@ -61,7 +60,7 @@ export default function HomePage() {
             <p className="text-[11px] tracking-[0.35em] uppercase text-white/40 mb-4 font-semibold">
               MAKING A DIFFERENCE
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-white mb-10" style={{ fontWeight: 600 }}>
+            <h2 className="font-serif text-3xl md:text-4xl text-white mb-10 font-semibold">
               Award-Winning Real Estate Excellence
             </h2>
             <ul className="space-y-4">
@@ -106,7 +105,7 @@ export default function HomePage() {
               services for buyers, sellers, and builders. Our experienced team is committed to
               delivering exceptional results for every client.
             </p>
-            <h2 className="font-serif text-4xl md:text-5xl text-white" style={{ fontWeight: 600 }}>
+            <h2 className="font-serif text-3xl md:text-4xl text-white font-semibold">
               How can we assist you?
             </h2>
           </div>
@@ -118,10 +117,7 @@ export default function HomePage() {
         <div className="max-w-[1200px] mx-auto">
           <div className="flex items-end justify-between mb-10">
             <div>
-              <h2
-                className="font-serif text-3xl md:text-4xl text-gray-900"
-                style={{ fontWeight: 700 }}
-              >
+              <h2 className="font-serif text-2xl md:text-3xl text-gray-900 font-bold tracking-wide">
                 FEATURED LISTINGS
               </h2>
             </div>
@@ -161,10 +157,7 @@ export default function HomePage() {
             />
           </div>
           <div>
-            <h2
-              className="font-serif text-3xl md:text-4xl text-white mb-6"
-              style={{ fontWeight: 600 }}
-            >
+            <h2 className="font-serif text-2xl md:text-3xl text-white mb-6 font-semibold">
               Full Service Brokerage With Fair Rates
             </h2>
             <p className="text-white/60 mb-6 text-sm leading-relaxed">

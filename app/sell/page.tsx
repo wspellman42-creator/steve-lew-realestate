@@ -38,7 +38,7 @@ export default function SellPage() {
 
         {/* Content Side */}
         <div className="bg-[#1a1a1a] flex flex-col justify-center px-8 md:px-16 py-16">
-          <h1 className="font-serif text-4xl md:text-5xl text-white font-light mb-8">
+          <h1 className="font-serif text-3xl md:text-4xl text-white font-bold mb-8">
             WE HAVE SO MUCH<br />TO OFFER YOU!
           </h1>
           <ul className="space-y-4 mb-10">
@@ -56,7 +56,7 @@ export default function SellPage() {
       <section className="bg-[#111111] py-20 px-6">
         <div className="max-w-[900px] mx-auto grid md:grid-cols-2 gap-12 items-start">
           <div>
-            <h2 className="font-serif text-3xl md:text-4xl text-white font-light mb-4">
+            <h2 className="font-serif text-2xl md:text-3xl text-white font-semibold mb-4">
               Sell My Home
             </h2>
             <p className="text-gray-400 mb-6">
@@ -103,7 +103,7 @@ export default function SellPage() {
       <section className="bg-[#0d0d0d] py-20 px-6">
         <div className="max-w-[1200px] mx-auto">
           <p className="text-xs tracking-[0.3em] uppercase text-gray-500 mb-3 text-center">OUR PROCESS</p>
-          <h2 className="font-serif text-3xl md:text-4xl text-white text-center font-light mb-14">
+          <h2 className="font-serif text-2xl md:text-3xl text-white text-center font-semibold mb-14">
             Our team of experts will guide you through the entire process
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
