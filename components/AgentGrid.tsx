@@ -77,7 +77,7 @@ export default function AgentGrid({ category }: { category?: string }) {
           onClick={() => router.push(`/about/${member.id}`)}
         >
           {/* Photo */}
-          <div className="h-[260px] bg-gradient-to-br from-gray-200 to-gray-100 flex items-center justify-center overflow-hidden">
+          <div className="h-[360px] bg-gradient-to-br from-gray-200 to-gray-100 flex items-center justify-center overflow-hidden">
             {member.photo ? (
               <img src={member.photo} alt={member.name} className="w-full h-full object-cover" />
             ) : (
