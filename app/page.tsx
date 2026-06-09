@@ -49,7 +49,7 @@ export default function HomePage() {
           >
             Discover Your Dream Home with Steve Lew Real Estate Group
           </h1>
-          <p className="text-gray-200 text-base md:text-lg leading-relaxed max-w-[750px] mx-auto">
+          <p className="text-gray-300 text-base md:text-lg leading-relaxed max-w-[750px] mx-auto">
             Explore exceptional homes for sale in central Indiana with our expert realtors,
             dedicated to finding the perfect property for you.
           </p>
@@ -78,20 +78,13 @@ export default function HomePage() {
           <div>
             <div className="flex items-center gap-5 mb-10">
               <div className="w-14 h-14 border border-white/30 flex-shrink-0" />
-              <h2
-                className="text-white font-bold text-3xl md:text-4xl tracking-[0.15em] uppercase"
-                style={{ fontFamily: '"Times New Roman", Times, serif' }}
-              >
+              <h2 className="text-white font-bold text-3xl md:text-4xl tracking-[0.15em] uppercase">
                 MAKING A DIFFERENCE
               </h2>
             </div>
             <ul className="space-y-5">
               {awards.map((award) => (
-                <li
-                  key={award}
-                  className="text-gray-200 text-base md:text-lg leading-relaxed"
-                  style={{ fontFamily: '"Times New Roman", Times, serif' }}
-                >
+                <li key={award} className="text-gray-300 text-base md:text-lg leading-relaxed">
                   {award}
                 </li>
               ))}
@@ -118,18 +111,12 @@ export default function HomePage() {
             <p className="text-[11px] tracking-[0.35em] uppercase text-white/40 mb-4 font-semibold">
               CENTRAL INDIANA
             </p>
-            <p
-              className="text-gray-200 text-lg md:text-xl leading-relaxed mb-8"
-              style={{ fontFamily: '"Times New Roman", Times, serif' }}
-            >
+            <p className="text-gray-300 text-lg md:text-xl leading-relaxed mb-8">
               We cater to the real estate needs of all of Central Indiana, offering comprehensive
               services for buyers, sellers, and builders. Our experienced team is committed to
               delivering exceptional results for every client.
             </p>
-            <h2
-              className="text-4xl md:text-5xl text-white font-semibold"
-              style={{ fontFamily: '"Times New Roman", Times, serif' }}
-            >
+            <h2 className="font-serif text-4xl md:text-5xl text-white font-semibold">
               How can we assist you?
             </h2>
           </div>
