@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const TO = "will@listwithlew.com";
 
 function row(label: string, value: string) {
@@ -53,7 +52,7 @@ export async function POST(req: NextRequest) {
   let html: string;
 
   if (type === "contact") {
-    const { name, email, phone, message } = body;
+    const { name, email, phone, message, source } = body;
     subject = `New Contact Form Submission — ${name}`;
     html = emailTemplate(
       "New Contact Form Submission",
@@ -63,7 +62,7 @@ export async function POST(req: NextRequest) {
         row("Phone", phone),
         row("Message", message),
       ].join(""),
-      "Contact Form · /contact"
+      source || "Contact Form · /contact"
     );
   } else if (type === "home-valuation") {
     const { address, name, email, phone } = body;
@@ -82,15 +81,22 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "Unknown form type." }, { status: 400 });
   }
 
-  const { error } = await resend.emails.send({
-    from: "Steve Lew RE <onboarding@resend.dev>",
-    to: [TO],
-    subject,
-    html,
-  });
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
-  if (error) {
-    console.error("Resend error:", error);
+  try {
+    const { error } = await resend.emails.send({
+      from: "Steve Lew RE <onboarding@resend.dev>",
+      to: [TO],
+      replyTo: body.email || undefined,
+      subject,
+      html,
+    });
+    if (error) {
+      console.error("Resend error:", error);
+      return NextResponse.json({ error: "Failed to send email." }, { status: 500 });
+    }
+  } catch (err) {
+    console.error("Email send error:", err);
     return NextResponse.json({ error: "Failed to send email." }, { status: 500 });
   }
 

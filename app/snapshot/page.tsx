@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Search, TrendingUp, TrendingDown, Home } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 const mockStats = {
   medianPrice: 315000,
@@ -202,13 +203,7 @@ function ContactBlock() {
           <p className="text-sm text-gray-400">+1(317) 868-5478 · info@listwithlew.com</p>
           <p className="text-sm text-gray-400">550 US 31 S., Greenwood, Indiana, 46142</p>
         </div>
-        <form className="flex flex-col gap-3">
-          <input type="text" placeholder="Name" className="bg-white/5 border border-white/20 px-4 py-3 text-white text-sm placeholder:text-gray-500 outline-none" />
-          <input type="email" placeholder="Email*" className="bg-white/5 border border-white/20 px-4 py-3 text-white text-sm placeholder:text-gray-500 outline-none" />
-          <input type="tel" placeholder="Phone*" className="bg-white/5 border border-white/20 px-4 py-3 text-white text-sm placeholder:text-gray-500 outline-none" />
-          <textarea placeholder="Message" rows={3} className="bg-white/5 border border-white/20 px-4 py-3 text-white text-sm placeholder:text-gray-500 outline-none resize-none" />
-          <button className="bg-white text-black py-3 text-xs tracking-widest uppercase hover:bg-gray-100 transition-colors">SUBMIT</button>
-        </form>
+        <ContactForm source="Market Snapshot · /snapshot" variant="dark" />
       </div>
     </div>
   );

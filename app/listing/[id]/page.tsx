@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Bed, Bath, Maximize2, Phone, Mail, ArrowLeft } from "lucide-react";
 import { mockListings, formatPrice } from "@/lib/mockData";
+import ContactForm from "@/components/ContactForm";
 
 export function generateStaticParams() {
   return mockListings.map((l) => ({ id: l.id }));
@@ -97,35 +98,12 @@ export default async function ListingDetailPage({
           <div className="border border-gray-200 p-6 sticky top-[90px]">
             <h3 className="font-serif text-xl text-gray-900 mb-1">Get More Information</h3>
             <p className="text-xs text-gray-500 mb-5">Contact Steve Lew Real Estate Group</p>
-            <form className="flex flex-col gap-3">
-              <input
-                type="text"
-                placeholder="Full Name"
-                className="border border-gray-300 px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-gray-600"
-              />
-              <input
-                type="email"
-                placeholder="Email*"
-                className="border border-gray-300 px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-gray-600"
-              />
-              <input
-                type="tel"
-                placeholder="Phone*"
-                className="border border-gray-300 px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-gray-600"
-              />
-              <textarea
-                placeholder="Message"
-                rows={4}
-                defaultValue={`I am interested in ${listing.address}, ${listing.city}, ${listing.state} ${listing.zip}`}
-                className="border border-gray-300 px-4 py-3 text-sm text-gray-900 placeholder:text-gray-400 outline-none focus:border-gray-600 resize-none"
-              />
-              <button
-                type="submit"
-                className="bg-[#0d0d0d] text-white py-3 text-xs tracking-widest uppercase hover:bg-gray-800 transition-colors"
-              >
-                SEND MESSAGE
-              </button>
-            </form>
+            <ContactForm
+              source={`Listing Inquiry · ${listing.address}`}
+              variant="light"
+              buttonLabel="SEND MESSAGE"
+              defaultMessage={`I am interested in ${listing.address}, ${listing.city}, ${listing.state} ${listing.zip}`}
+            />
             <div className="mt-5 pt-5 border-t border-gray-100 flex flex-col gap-2">
               <a href="tel:+13178685478" className="flex items-center gap-2 text-sm text-gray-600 hover:text-gray-900">
                 <Phone size={14} className="text-gray-400" />

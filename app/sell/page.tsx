@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { CheckCircle } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 const offerings = [
   "A large and experienced team of professionals",
@@ -68,34 +69,7 @@ export default function SellPage() {
               <p className="text-sm text-gray-400">info@listwithlew.com</p>
             </div>
           </div>
-          <form className="flex flex-col gap-4">
-            <input
-              type="text"
-              placeholder="Full Name*"
-              className="bg-white/5 border border-white/20 px-4 py-3.5 text-white text-sm placeholder:text-gray-500 outline-none focus:border-white/40 transition-colors"
-            />
-            <input
-              type="email"
-              placeholder="Email*"
-              className="bg-white/5 border border-white/20 px-4 py-3.5 text-white text-sm placeholder:text-gray-500 outline-none focus:border-white/40 transition-colors"
-            />
-            <input
-              type="tel"
-              placeholder="Phone*"
-              className="bg-white/5 border border-white/20 px-4 py-3.5 text-white text-sm placeholder:text-gray-500 outline-none focus:border-white/40 transition-colors"
-            />
-            <textarea
-              placeholder="Message"
-              rows={4}
-              className="bg-white/5 border border-white/20 px-4 py-3.5 text-white text-sm placeholder:text-gray-500 outline-none focus:border-white/40 transition-colors resize-none"
-            />
-            <button
-              type="submit"
-              className="bg-white text-black py-3.5 text-xs tracking-widest uppercase hover:bg-gray-100 transition-colors"
-            >
-              SUBMIT
-            </button>
-          </form>
+          <ContactForm source="Sell My Home · /sell" variant="dark" />
         </div>
       </section>
 

@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import { Phone, Mail } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 const loanTerms = [
   { label: "10-Year Fixed", years: 10 },
@@ -202,13 +203,7 @@ export default function MortgageCalculatorPage() {
         <div className="mt-16 bg-[#111111] text-white p-8 max-w-[500px] ml-auto">
           <h3 className="font-serif text-2xl mb-2">Get more info from a local expert!</h3>
           <p className="text-sm text-gray-400 mb-6">Let our team help you navigate your financing options.</p>
-          <form className="flex flex-col gap-3">
-            <input type="text" placeholder="Full Name" className="bg-white/5 border border-white/20 px-4 py-3 text-white text-sm placeholder:text-gray-500 outline-none" />
-            <input type="email" placeholder="Email*" className="bg-white/5 border border-white/20 px-4 py-3 text-white text-sm placeholder:text-gray-500 outline-none" />
-            <input type="tel" placeholder="Phone*" className="bg-white/5 border border-white/20 px-4 py-3 text-white text-sm placeholder:text-gray-500 outline-none" />
-            <textarea placeholder="Message" rows={3} className="bg-white/5 border border-white/20 px-4 py-3 text-white text-sm placeholder:text-gray-500 outline-none resize-none" />
-            <button className="bg-white text-black py-3 text-xs tracking-widest uppercase hover:bg-gray-100 transition-colors">SUBMIT</button>
-          </form>
+          <ContactForm source="Mortgage Calculator · /mortgage-calculator" variant="dark" />
           <div className="mt-5 pt-5 border-t border-white/10 flex flex-col gap-2">
             <a href="tel:+13178685478" className="flex items-center gap-2 text-sm text-gray-400 hover:text-white">
               <Phone size={13} />+1(317) 868-5478
