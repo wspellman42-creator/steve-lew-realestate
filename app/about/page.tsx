@@ -22,7 +22,7 @@ export default function AboutPage() {
       {/* Hero — centered text matching listwithlew.com */}
       <section className="relative h-[60vh] min-h-[450px] flex items-center justify-center">
         <Image
-          src="/images/team-header.jpg"
+          src="/images/team-group-photo.jpg"
           alt="Steve Lew Real Estate Team"
           fill
           className="object-cover object-center"

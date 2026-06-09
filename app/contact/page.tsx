@@ -28,7 +28,7 @@ export default function ContactPage() {
     <div className="min-h-screen pt-[72px]">
       {/* Hero */}
       <section className="relative h-[44vh] min-h-[308px] flex items-end">
-        <Image src="/images/about-team-group.webp" alt="Contact Steve Lew Real Estate" fill className="object-cover object-top" priority />
+        <Image src="/images/team-group-photo.jpg" alt="Contact Steve Lew Real Estate" fill className="object-cover object-top" priority />
         <div className="absolute inset-0 bg-black/55 pointer-events-none" />
         <div className="relative z-10 px-6 pb-12 max-w-[1200px] mx-auto w-full">
           <p className="text-xs tracking-[0.3em] uppercase text-white/50 mb-3">GET IN TOUCH</p>

@@ -152,8 +152,8 @@ export default function HomePage() {
         <div className="max-w-[1200px] mx-auto grid md:grid-cols-2 gap-14 items-center">
           <div className="relative h-[462px]">
             <Image
-              src="/images/truck.webp"
-              alt="Steve Lew Real Estate Group moving truck"
+              src="/images/team-group-photo-2.jpg"
+              alt="Steve Lew Real Estate Group team"
               fill
               className="object-cover"
               sizes="(max-width: 768px) 100vw, 50vw"
