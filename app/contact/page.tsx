@@ -26,13 +26,18 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen pt-[72px]">
-      {/* Hero */}
-      <section className="relative h-[44vh] min-h-[308px] flex items-end">
-        <Image src="/images/team-group-photo.jpg" alt="Contact Steve Lew Real Estate" fill className="object-cover object-top" priority />
-        <div className="absolute inset-0 bg-black/55 pointer-events-none" />
-        <div className="relative z-10 px-6 pb-12 max-w-[1200px] mx-auto w-full">
-          <p className="text-xs tracking-[0.3em] uppercase text-white/50 mb-3">GET IN TOUCH</p>
-          <h1 className="font-serif text-4xl md:text-5xl text-white font-light">Contact Us</h1>
+      {/* Hero — centered text matching About page */}
+      <section className="relative h-[60vh] min-h-[450px] flex items-center justify-center">
+        <Image src="/images/team-group-photo.jpg" alt="Contact Steve Lew Real Estate" fill className="object-cover object-center" priority />
+        <div className="absolute inset-0 bg-black/45 pointer-events-none" />
+        <div className="relative z-10 text-center px-6">
+          <h1 className="font-serif text-[1.8rem] md:text-[2.7rem] text-white font-bold mb-3">
+            Get In Touch With Our Team
+          </h1>
+          <div className="w-16 h-0.5 bg-white mx-auto mb-4" />
+          <p className="text-white text-base md:text-lg italic">
+            We are here to help you with all of your real estate needs from start to finish.
+          </p>
         </div>
       </section>
 

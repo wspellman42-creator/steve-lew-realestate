@@ -54,13 +54,18 @@ export default function ReviewsPage() {
 
   return (
     <div className="min-h-screen pt-[72px]">
-      {/* Hero */}
-      <section className="relative h-[42vh] min-h-[286px] flex items-end">
-        <Image src="/images/team-group-photo.jpg" alt="Reviews" fill className="object-cover object-top" priority />
-        <div className="absolute inset-0 bg-black/55 pointer-events-none" />
-        <div className="relative z-10 px-6 pb-12 max-w-[1200px] mx-auto w-full">
-          <p className="text-xs tracking-[0.3em] uppercase text-white/50 mb-3">WHAT CLIENTS SAY</p>
-          <h1 className="font-serif text-4xl md:text-5xl text-white font-light">Google Reviews</h1>
+      {/* Hero — centered text matching About page */}
+      <section className="relative h-[60vh] min-h-[450px] flex items-center justify-center">
+        <Image src="/images/team-group-photo.jpg" alt="Reviews" fill className="object-cover object-center" priority />
+        <div className="absolute inset-0 bg-black/45 pointer-events-none" />
+        <div className="relative z-10 text-center px-6">
+          <h1 className="font-serif text-[1.8rem] md:text-[2.7rem] text-white font-bold mb-3">
+            What Our Clients Are Saying
+          </h1>
+          <div className="w-16 h-0.5 bg-white mx-auto mb-4" />
+          <p className="text-white text-base md:text-lg italic">
+            Real reviews from the families we&apos;ve helped buy and sell across Central Indiana.
+          </p>
         </div>
       </section>
 
