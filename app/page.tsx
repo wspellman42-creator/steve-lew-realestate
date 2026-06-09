@@ -34,6 +34,14 @@ export default function HomePage() {
     <>
       {/* ─── HERO ─────────────────────────────────────────────── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center bg-[#0d0d0d] pt-[72px] pb-16">
+        <Image
+          src="/images/home-hero.jpg"
+          alt="Steve Lew Real Estate Group team"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/60 pointer-events-none" />
         <div className="relative z-10 text-center px-6 max-w-[960px] mx-auto mb-10">
           {/* Main headline — bold serif, matching original */}
           <h1
