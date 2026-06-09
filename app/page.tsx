@@ -89,7 +89,7 @@ export default function HomePage() {
               {awards.map((award) => (
                 <li
                   key={award}
-                  className="text-white/70 text-base md:text-lg leading-relaxed"
+                  className="text-white text-[1.5rem] md:text-[1.6875rem] leading-relaxed"
                   style={{ fontFamily: '"Times New Roman", Times, serif' }}
                 >
                   {award}
@@ -119,7 +119,7 @@ export default function HomePage() {
               CENTRAL INDIANA
             </p>
             <p
-              className="text-white/70 text-lg md:text-xl leading-relaxed mb-8"
+              className="text-white text-[1.6875rem] md:text-[1.875rem] leading-relaxed mb-8"
               style={{ fontFamily: '"Times New Roman", Times, serif' }}
             >
               We cater to the real estate needs of all of Central Indiana, offering comprehensive
