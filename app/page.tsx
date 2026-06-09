@@ -78,13 +78,20 @@ export default function HomePage() {
           <div>
             <div className="flex items-center gap-5 mb-10">
               <div className="w-14 h-14 border border-white/30 flex-shrink-0" />
-              <h2 className="text-white font-bold text-xl tracking-[0.15em] uppercase">
+              <h2
+                className="text-white font-bold text-3xl md:text-4xl tracking-[0.15em] uppercase"
+                style={{ fontFamily: '"Times New Roman", Times, serif' }}
+              >
                 MAKING A DIFFERENCE
               </h2>
             </div>
             <ul className="space-y-5">
               {awards.map((award) => (
-                <li key={award} className="text-white/70 text-sm leading-relaxed">
+                <li
+                  key={award}
+                  className="text-white/70 text-base md:text-lg leading-relaxed"
+                  style={{ fontFamily: '"Times New Roman", Times, serif' }}
+                >
                   {award}
                 </li>
               ))}
@@ -111,12 +118,18 @@ export default function HomePage() {
             <p className="text-[11px] tracking-[0.35em] uppercase text-white/40 mb-4 font-semibold">
               CENTRAL INDIANA
             </p>
-            <p className="text-white/70 text-base leading-relaxed mb-8">
+            <p
+              className="text-white/70 text-lg md:text-xl leading-relaxed mb-8"
+              style={{ fontFamily: '"Times New Roman", Times, serif' }}
+            >
               We cater to the real estate needs of all of Central Indiana, offering comprehensive
               services for buyers, sellers, and builders. Our experienced team is committed to
               delivering exceptional results for every client.
             </p>
-            <h2 className="font-serif text-3xl md:text-4xl text-white font-semibold">
+            <h2
+              className="text-4xl md:text-5xl text-white font-semibold"
+              style={{ fontFamily: '"Times New Roman", Times, serif' }}
+            >
               How can we assist you?
             </h2>
           </div>
