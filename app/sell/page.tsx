@@ -5,7 +5,7 @@ import ContactForm from "@/components/ContactForm";
 const offerings = [
   "A large and experienced team of professionals",
   "A free moving truck",
-  "A 3% listing rate for non-Hero Rate members, or just 2% for Hero Rate qualifiers - saving you thousands",
+  "A listing rate as low as 4% - saving you thousands",
   "Over 240 Five-Star Google reviews",
   "200+ homes sold in 2023",
   "A team that consistently sells over $60 million in gross sales every year",
