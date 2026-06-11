@@ -78,7 +78,7 @@ export default function HomePage() {
           <div>
             <div className="flex items-center gap-5 mb-10">
               <div className="w-14 h-14 border border-white/30 flex-shrink-0" />
-              <h2 className="text-white font-bold text-3xl md:text-4xl tracking-[0.15em] uppercase">
+              <h2 className="text-white font-bold text-3xl md:text-4xl tracking-[0.15em] uppercase" style={{ fontFamily: "Times New Roman, serif" }}>
                 MAKING A DIFFERENCE
               </h2>
             </div>
